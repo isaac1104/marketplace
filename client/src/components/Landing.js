@@ -1,5 +1,8 @@
 import React from "react";
+import SignUpModal from "./SignUpModal";
+import SignInModal from "./SignInModal";
 import background from "./../images/background/la.jpg";
+import { Button, Icon } from "semantic-ui-react";
 
 const Landing = () => {
 
@@ -18,6 +21,9 @@ const Landing = () => {
     },
     font: {
       color: "tomato"
+    },
+    button: {
+      marginTop: "20px"
     }
   }
 
@@ -25,8 +31,17 @@ const Landing = () => {
     <div style={style.container}>
       <div style={style.font}>
         <h1>Welcome to the MARKETPLACE</h1>
-        <h3>Sign Up or Sign In</h3>
-        <h5>Continue as guest</h5>
+        <div style={style.button}>
+          <SignUpModal/>
+          <SignInModal/>
+        </div>
+        <Button style={style.button} color="blue" animated>
+          <Button.Content visible>Continue as guest</Button.Content>
+          <Button.Content hidden>
+            <Icon name="arrow circle right"/>
+          </Button.Content>
+        </Button>
+
       </div>
     </div>
   );

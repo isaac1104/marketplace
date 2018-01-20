@@ -1,11 +1,11 @@
 import React from "react";
-import { Responsive } from "semantic-ui-react";
+import Landing from "./Landing";
 
 const App = () => {
   return (
-    <Responsive>
-      <h1>Welcome to the MARKETPLACE</h1>
-    </Responsive>
+    <div>
+      <Landing/>
+    </div>
   );
 }
 

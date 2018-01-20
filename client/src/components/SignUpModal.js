@@ -1,4 +1,5 @@
 import React from "react";
+import SignUpForm from "./../containers/SignUpForm";
 import { Button, Header, Icon, Modal } from "semantic-ui-react";
 
 const SignUpModal = () => {
@@ -13,13 +14,13 @@ const SignUpModal = () => {
     } closeIcon>
       <Header icon='signup' content='Sign Up with Marketplace' />
       <Modal.Content>
-        <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+        <SignUpForm/>
       </Modal.Content>
-      <Modal.Actions>
+      {/* <Modal.Actions>
         <Button color='blue'>
           <Icon name='checkmark' /> Done
         </Button>
-      </Modal.Actions>
+      </Modal.Actions> */}
     </Modal>
   );
 }

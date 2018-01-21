@@ -1,9 +1,11 @@
 import { combineReducers } from "redux";
 import { reducer as formReducer } from "redux-form";
-import signUpUserReducer from "./sign_up_user_reducer";
+import dataReducer from "./data_reducer";
+import postNewUserReducer from "./post_new_user_reducer";
 
 const rootReducer = combineReducers({
-  user: signUpUserReducer,
+  data: dataReducer,
+  newUser: postNewUserReducer,
   form: formReducer
 });
 

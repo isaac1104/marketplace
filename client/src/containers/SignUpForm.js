@@ -8,8 +8,8 @@ import { Button , Icon, Input } from "semantic-ui-react";
 class SignUpForm extends Component {
 
   formSubmit = userInfo => {
-    this.props.signUpUser();
     console.log(userInfo);
+    this.props.postNewUser();
   }
 
   render () {

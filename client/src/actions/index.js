@@ -1,9 +1,14 @@
 import axios from "axios";
-import { SIGN_UP_USER } from "./types";
+import { FETCH_DATA, POST_NEW_USER } from "./types";
 
-export const signUpUser = () => async dispatch => {
-  const request = await axios.post("/server/functions.php", {
-        type: "create-user",
+export const fetchData = () => async dispatch => {
+  const request = await axios.get("http://54.215.120.93/functions.php?type=userdata");
+  const { data } = request;
+  dispatch({ type: FETCH_DATA, payload: data });
+}
+
+export const postNewUser = () => async dispatch => {
+  const request = await axios.post("http://54.215.120.93/functions.php?type=add-user", {
         username: "isaac1104",
         password: "isaac",
         email: "isaac-kwon@hotmail.com",
@@ -12,5 +17,6 @@ export const signUpUser = () => async dispatch => {
         zipcode: 92602,
         phone: 5624844345
       });
-  dispatch({ type: SIGN_UP_USER, payload: request });
+      console.log(request);
+  dispatch({ type: POST_NEW_USER, payload: request });
 }

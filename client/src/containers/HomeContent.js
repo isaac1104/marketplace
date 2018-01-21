@@ -18,7 +18,7 @@ class HomeContent extends Component {
     console.log(this.props.data);
     return (
       <div style={style.container}>
-        {this.greetUser()}
+        <h1>Welcome</h1>
         <h3>More info is on the way...</h3>
       </div>
     );

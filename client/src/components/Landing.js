@@ -3,6 +3,7 @@ import SignUpModal from "./SignUpModal";
 import SignInModal from "./SignInModal";
 import background from "./../images/background/la.jpg";
 import { Button, Icon } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
 
@@ -35,13 +36,14 @@ const Landing = () => {
           <SignUpModal/>
           <SignInModal/>
         </div>
-        <Button style={style.button} color="blue" animated>
-          <Button.Content visible>Continue as guest</Button.Content>
-          <Button.Content hidden>
-            <Icon name="arrow circle right"/>
-          </Button.Content>
-        </Button>
-
+        <Link to="/home">
+          <Button style={style.button} color="blue" animated>
+            <Button.Content visible>Continue as guest</Button.Content>
+            <Button.Content hidden>
+              <Icon name="arrow circle right"/>
+            </Button.Content>
+          </Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,13 +1,11 @@
 import { SIGN_UP_USER } from "./../actions/types";
 
-const initialState = {
-  user: {}
-}
+const initialState = null
 
 function signUpUserReducer(state = initialState, action) {
   switch (action.type) {
     case SIGN_UP_USER:
-      return state;
+      return action.payload;
     default:
       return state;
   }

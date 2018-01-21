@@ -9,6 +9,7 @@ class SignUpForm extends Component {
 
   formSubmit = userInfo => {
     console.log(userInfo);
+    this.props.postNewUser();
   }
 
   render () {

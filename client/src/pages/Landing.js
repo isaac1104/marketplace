@@ -1,6 +1,5 @@
 import React from "react";
-import SignUpModal from "./SignUpModal";
-import SignInModal from "./SignInModal";
+import SignUpModal from "./../containers/SignUpModal";
 import background from "./../images/background/la.jpg";
 import { Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
@@ -34,7 +33,14 @@ const Landing = () => {
         <h1>Welcome to the MARKETPLACE</h1>
         <div style={style.button}>
           <SignUpModal/>
-          <SignInModal/>
+          <Link to="/login">
+            <Button style={style.button} color="teal" animated>
+              <Button.Content visible>Sign In</Button.Content>
+              <Button.Content hidden>
+                <Icon name="sign in"/>
+              </Button.Content>
+            </Button>
+          </Link>
         </div>
         <Link to="/home">
           <Button style={style.button} color="blue" animated>

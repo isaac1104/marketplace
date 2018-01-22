@@ -29,7 +29,7 @@ class SignUpForm extends Component {
         <h3>Please sign up to get started!</h3>
         <div>
           <label>Username</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="username"
               component={ Input }
@@ -40,7 +40,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Password</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="password"
               component={ Input }
@@ -51,7 +51,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>First Name</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="firstname"
               component={ Input }
@@ -62,7 +62,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Last Name</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="lastname"
               component={ Input }
@@ -73,7 +73,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Email</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="email"
               component={ Input }
@@ -84,7 +84,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Zipcode</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="zipcode"
               component={ Input }
@@ -95,7 +95,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Phone</label>
-          <div style={{ marginTop : "10px" }}>
+          <div style={{ margin : "10px 0 10px 0" }}>
             <Field
               name="phone"
               component={ Input }

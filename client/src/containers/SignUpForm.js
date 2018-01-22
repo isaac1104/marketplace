@@ -7,9 +7,10 @@ import { Button , Icon, Input } from "semantic-ui-react";
 
 class SignUpForm extends Component {
 
-  formSubmit = userInfo => {
-    console.log(userInfo);
-    this.props.postNewUser();
+  formSubmit = () => {
+    console.log(this.props.form.signUpUserInfo.values);
+    const user = this.props.form.signUpUserInfo.values;
+    this.props.postNewUser(user.username, user.password, user.firstname, user.lastname, user.email, user.zipcode, user.phone);
   }
 
   render () {
@@ -22,7 +23,7 @@ class SignUpForm extends Component {
           <label>Username</label>
           <div>
             <Field
-              name="userName"
+              name="username"
               component={ Input }
               type="text"
               placeholder="Username"
@@ -44,7 +45,7 @@ class SignUpForm extends Component {
           <label>First Name</label>
           <div>
             <Field
-              name="firstName"
+              name="firstname"
               component={ Input }
               type="text"
               placeholder="First Name"
@@ -55,7 +56,7 @@ class SignUpForm extends Component {
           <label>Last Name</label>
           <div>
             <Field
-              name="lastName"
+              name="lastname"
               component={ Input }
               type="text"
               placeholder="Last Name"
@@ -74,6 +75,28 @@ class SignUpForm extends Component {
           </div>
         </div>
         <div>
+          <label>Zipcode</label>
+          <div>
+            <Field
+              name="zipcode"
+              component={ Input }
+              type="number"
+              placeholder="Zipcode"
+            />
+          </div>
+        </div>
+        <div>
+          <label>Phone</label>
+          <div>
+            <Field
+              name="phone"
+              component={ Input }
+              type="number"
+              placeholder="Phone Number"
+            />
+          </div>
+        </div>
+        <div>
           <Button
             type="submit"
             disabled={pristine || submitting}
@@ -87,4 +110,10 @@ class SignUpForm extends Component {
   }
 }
 
-export default reduxForm({ form: "signUpUserInfo" })(connect(null, actions)(SignUpForm));
+function mapStateToProps(state) {
+  return {
+    form: state.form
+  }
+}
+
+export default reduxForm({ form: "signUpUserInfo" })(connect(mapStateToProps, actions)(SignUpForm));

@@ -7,16 +7,18 @@ export const fetchData = () => async dispatch => {
   dispatch({ type: FETCH_DATA, payload: data });
 }
 
-export const postNewUser = () => async dispatch => {
+export const postNewUser = (username, password, email, firstname, lastname, zipcode, phone) => async dispatch => {
   const request = await axios.post("https://54.215.120.93/api/users/add.php", {
-        username: "isaac1104",
-        password: "isaac",
-        email: "isaac-kwon@hotmail.com",
-        firstname: "isaac",
-        lastname: "kwon",
-        zipcode: 92602,
-        phone: 5624844345
+        username,
+        password,
+        email,
+        firstname,
+        lastname,
+        zipcode,
+        phone
       });
-      console.log(request);
-  dispatch({ type: POST_NEW_USER, payload: request });
+  const { data } = request;
+  console.log(request);
+  console.log(data);
+  dispatch({ type: POST_NEW_USER, payload: data });
 }

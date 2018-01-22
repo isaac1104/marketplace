@@ -4,8 +4,16 @@ import { connect } from 'react-redux';
 
 class HomeContent extends Component {
 
-  componentDidMount() {
-    this.props.fetchData();
+  greetUser = () => {
+    if (this.props.user) {
+      return (
+        <h1>Welcome {this.props.user[0].username}</h1>
+      );
+    } else {
+      return (
+        <h1>Welcome Guest</h1>
+      );
+    }
   }
 
   render () {
@@ -15,11 +23,10 @@ class HomeContent extends Component {
         marginLeft: "210px"
       }
     }
-    console.log(this.props.data);
+    console.log(this.props.user);
     return (
       <div style={style.container}>
-        <h1>Welcome</h1>
-        <h3>More info is on the way...</h3>
+        {this.greetUser()}
       </div>
     );
   }
@@ -27,7 +34,7 @@ class HomeContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.data
+    user: state.logInUser
   }
 }
 

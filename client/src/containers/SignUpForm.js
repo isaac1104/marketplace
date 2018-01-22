@@ -8,7 +8,7 @@ import { Redirect } from "react-router-dom";
 class SignUpForm extends Component {
 
   componentWillUnmount() {
-    this.props.resetSignUpState();
+    this.props.resetUserState();
   }
 
   formSubmit = () => {

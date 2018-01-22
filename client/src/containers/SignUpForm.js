@@ -26,9 +26,10 @@ class SignUpForm extends Component {
 
     return (
       <form onSubmit={handleSubmit(this.formSubmit)}>
+        <h3>Please sign up to get started!</h3>
         <div>
           <label>Username</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="username"
               component={ Input }
@@ -39,7 +40,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Password</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="password"
               component={ Input }
@@ -50,7 +51,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>First Name</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="firstname"
               component={ Input }
@@ -61,7 +62,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Last Name</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="lastname"
               component={ Input }
@@ -72,7 +73,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Email</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="email"
               component={ Input }
@@ -83,7 +84,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Zipcode</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="zipcode"
               component={ Input }
@@ -94,7 +95,7 @@ class SignUpForm extends Component {
         </div>
         <div>
           <label>Phone</label>
-          <div>
+          <div style={{ marginTop : "10px" }}>
             <Field
               name="phone"
               component={ Input }
@@ -103,7 +104,7 @@ class SignUpForm extends Component {
             />
           </div>
         </div>
-        <div>
+        <div style={{marginTop: "20px"}}>
           <Button
             type="submit"
             disabled={pristine || submitting}

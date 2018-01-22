@@ -3,9 +3,13 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
 import { Button , Icon, Input } from "semantic-ui-react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class SignUpForm extends Component {
+
+  componentWillUnmount() {
+    this.props.resetSignUpState();
+  }
 
   formSubmit = () => {
     const user = this.props.form.signUpUserInfo.values;
@@ -15,7 +19,7 @@ class SignUpForm extends Component {
   redirectToLogin = () => {
     if (this.props.newUser === true) {
       return (
-        <Link to="/login"/>
+        <Redirect to={ "/login" }/>
       );
     }
   }

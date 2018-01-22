@@ -1,2 +1,3 @@
 export const FETCH_DATA = "FETCH_DATA";
 export const POST_NEW_USER = "POST_NEW_USER";
+export const RESET_SIGNUP_STATE = "RESET_SIGNUP_STATE";

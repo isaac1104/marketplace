@@ -1,7 +1,6 @@
 import React from "react";
 import SignUpForm from "./../containers/SignUpForm";
 import background from "./../images/background/la.jpg";
-import { Button, Icon } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Landing = () => {
@@ -35,26 +34,10 @@ const Landing = () => {
           <SignUpForm/>
         </div>
         <div style={style.button}>
-          Already have an account?
-          <Link to="/login">
-            <Button color="teal" animated style={{ marginLeft: "20px" }}>
-              <Button.Content visible>Sign In</Button.Content>
-              <Button.Content hidden>
-                <Icon name="sign in"/>
-              </Button.Content>
-            </Button>
-          </Link>
+          <Link to="/login" style={{ color:"tomato" }}> Sign In</Link>
         </div>
         <div style={style.button}>
-          Or
-          <Link to="/home">
-            <Button color="blue" animated style={{ marginLeft: "20px" }}>
-              <Button.Content visible>Continue as guest</Button.Content>
-              <Button.Content hidden>
-                <Icon name="arrow circle right"/>
-              </Button.Content>
-            </Button>
-          </Link>
+          <Link to="/home" style={{ color:"tomato" }}> Continue as guest</Link>
         </div>
       </div>
     </div>

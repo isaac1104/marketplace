@@ -19,6 +19,9 @@ const Navbar = () => {
          <Link to="/home">
            <Menu.Item name="HOME"/>
          </Link>
+         <Link to="/" onClick={() => localStorage.clear()}>
+           <Menu.Item name="LOGOUT"/>
+         </Link>
        </Menu>
      </Segment>
  );

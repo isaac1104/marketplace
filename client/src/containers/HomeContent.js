@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 class HomeContent extends Component {
 
   greetUser = () => {
-    if (this.props.currentUser) {
+    if (this.props.currentUser.loggedIn) {
       return (
-        <h1>Welcome {this.props.currentUser[0].username}</h1>
+        <h1>Welcome {this.props.currentUser.data[0].username}</h1>
       );
     } else {
       return (
@@ -23,7 +23,7 @@ class HomeContent extends Component {
         marginLeft: "210px"
       }
     }
-    console.log(this.props.currentUser);
+    console.log(this.props.currentUser.loggedIn);
     return (
       <div style={style.container}>
         {this.greetUser()}

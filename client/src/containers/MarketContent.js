@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 import PostItem from "./../components/PostItem";
 import Filter from "./../components/Filter";
+import { Link } from "react-router-dom";
 
 export default class AboutContent extends Component {
 
   render () {
     return (
       <div>
+        <h1 className="d-inline-block">Market</h1>
+        <Link to="/add-post"><button className="btn btn-success d-inline-block pull-right">Write a Post</button></Link>
+        <hr className="my-3"/>
         <Filter />
         <div className="row">
           {/* Map Through post data and pass into PostItem as props? */}

@@ -43,8 +43,8 @@ export default class Filter extends Component {
               </div>
             </div>
           </div>
-          <div className="col-2">
-            <button className="btn btn-info w-100"><i class="fa fa-filter" aria-hidden="true"></i> Filter</button>
+          <div className="col-6 col-md-3">
+            <button className="btn btn-info w-100"><i className="fa fa-filter" aria-hidden="true"></i> Filter</button>
           </div>
         </div>
       </div>

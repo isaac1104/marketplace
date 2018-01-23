@@ -4,6 +4,7 @@ import Home from "./../pages/Home";
 import SignUp from "./../pages/SignUp";
 import About from "./../pages/About";
 import Market from "./../pages/Market";
+import Post from "./../pages/Post";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/market" component={Market}/>
+          <Route exact path="/post/:postId" component={Post}/>
         </Switch>
       </div>
     </Router>

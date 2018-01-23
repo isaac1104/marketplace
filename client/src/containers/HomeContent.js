@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import PostItem from "./../components/PostItem";
 
 export default class HomeContent extends Component {
 
@@ -15,72 +15,14 @@ export default class HomeContent extends Component {
         <h1>Recently Uploaded</h1>
         <hr className="my-2"/>
         <div className="row">
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-sm-6 col-md-4 mb-2">
-            <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
-              <div className="card-body">
-                <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
-                <p className="text-muted">Buena Park, CA</p>
-                <p><span className="badge badge-dark">1/22/2018 11:50 PM</span></p>
-                <p className="card-text">$79.99</p>
-              </div>
-            </div>
-          </div>
+          {/* Map Through post data and pass into PostItem as props? */}
+          <PostItem
+            id="1"
+            title="Post Title"
+            location="city, state"
+            timestamp="1/23/2018 12:23 PM"
+            price="20.00"
+          />
         </div>
       </div>
     );

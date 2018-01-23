@@ -10,14 +10,15 @@ class LogInForm extends Component {
   formSubmit = () => {
     const user = this.props.form.logInInfo.values;
     this.props.logInUser(user.username, user.password);
+    console.log(this.props.user);
   }
 
   redirectToHome = () => {
-    if (this.props.user) {
+    if (this.props.user.data) {
       return (
-        <Redirect to={ `/home/${this.props.user[0].username}` }/>
+        <Redirect to={ "/home" }/>
       );
-    } else if (this.props.user === "") {
+    } else if (this.props.user.data === "") {
       console.log("username and password not matching");
     }
   }

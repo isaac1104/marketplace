@@ -5,9 +5,15 @@ import { connect } from 'react-redux';
 class HomeContent extends Component {
 
   greetUser = () => {
-    return (
-      <h1>Welcome {sessionStorage.getItem("user")}</h1>
-    );
+    if (this.props.currentUser) {
+      return (
+        <h1>Welcome {this.props.currentUser[0].username}</h1>
+      );
+    } else {
+      return (
+        <h1>Welcome Guest</h1>
+      );
+    }
   }
 
   render () {

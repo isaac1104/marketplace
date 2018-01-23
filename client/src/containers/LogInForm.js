@@ -15,7 +15,7 @@ class LogInForm extends Component {
   redirectToHome = () => {
     if (this.props.user) {
       return (
-        <Redirect to={ "/home" }/>
+        <Redirect to={ `/home/${this.props.user[0].username}` }/>
       );
     } else if (this.props.user === "") {
       console.log("username and password not matching");

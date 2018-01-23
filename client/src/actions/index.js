@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, RESET_LOG_IN_STATE } from "./types";
+import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER } from "./types";
 
 export const fetchData = () => async dispatch => {
   const request = await axios.get("https://54.215.120.93/api/users/userdata.php");
@@ -24,13 +24,6 @@ export const postNewUser = (username, password, firstname, lastname, email, zipc
 export const resetUserState = () => {
   return {
     type: RESET_USER_STATE,
-    payload: null
-  }
-}
-
-export const resetLogInState = () => {
-  return {
-    type: RESET_LOG_IN_STATE,
     payload: null
   }
 }

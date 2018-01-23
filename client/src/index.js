@@ -6,7 +6,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./reducers";
 import reduxThunk from "redux-thunk";
 import "semantic-ui-css/semantic.min.css";
-import { loadState, saveState } from "./localStorage";
+import { loadState, saveState } from "./sessionStorage";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const persistedState = loadState();

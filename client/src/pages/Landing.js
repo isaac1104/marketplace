@@ -37,7 +37,7 @@ const Landing = () => {
           <Link to="/login" style={{ color:"tomato" }}> Sign In</Link>
         </div>
         <div style={style.button}>
-          <Link to="/home" style={{ color:"tomato" }}> Continue as guest</Link>
+          <Link to="/home/guest" style={{ color:"tomato" }}> Continue as guest</Link>
         </div>
       </div>
     </div>

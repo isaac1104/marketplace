@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import * as actions from './../actions';
-import { connect } from 'react-redux';
+import * as actions from "./../actions";
+import { connect } from "react-redux";
 
 class HomeContent extends Component {
 
   greetUser = () => {
-    if (this.props.currentUser.loggedIn) {
+    if (this.props.currentUser) {
       return (
-        <h1>Welcome {this.props.currentUser.data[0].username}</h1>
+        <h1>Welcome {this.props.currentUser[0].username}</h1>
       );
     } else {
       return (
@@ -17,16 +17,10 @@ class HomeContent extends Component {
   }
 
   render () {
-
-    const style = {
-      container: {
-        marginLeft: "210px"
-      }
-    }
-    console.log(this.props.currentUser.loggedIn);
+    console.log(this.props.currentUser);
     return (
-      <div style={style.container}>
-        {this.greetUser()}
+      <div>
+        <h1>Home Section</h1>
       </div>
     );
   }

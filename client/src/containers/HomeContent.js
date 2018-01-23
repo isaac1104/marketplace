@@ -5,15 +5,9 @@ import { connect } from 'react-redux';
 class HomeContent extends Component {
 
   greetUser = () => {
-    if (this.props.user) {
-      return (
-        <h1>Welcome {this.props.user[0].username}</h1>
-      );
-    } else {
-      return (
-        <h1>Welcome Guest</h1>
-      );
-    }
+    return (
+      <h1>Welcome {sessionStorage.getItem("user")}</h1>
+    );
   }
 
   render () {
@@ -23,7 +17,7 @@ class HomeContent extends Component {
         marginLeft: "210px"
       }
     }
-    console.log(this.props.user);
+    console.log(this.props.currentUser);
     return (
       <div style={style.container}>
         {this.greetUser()}
@@ -34,7 +28,7 @@ class HomeContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.logInUser
+    currentUser: state.logInUser
   }
 }
 

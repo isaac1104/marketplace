@@ -56,7 +56,7 @@ class LogInForm extends Component {
           >
             <Icon name="sign in" /> Log In
           </Button>
-          <Link to="/">
+          <Link to="/home">
             <Button
               type="button"
               color="red"

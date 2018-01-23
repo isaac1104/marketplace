@@ -1,9 +1,9 @@
 import React from "react";
 import Sidebar from "./../components/Sidebar";
 import Navbar from "./../components/Navbar";
-import HomeContent from "./../containers/HomeContent";
+import AboutContent from "./../containers/AboutContent";
 
-const Home = () => {
+const About = () => {
   return (
     <div>
       <Navbar/>
@@ -13,7 +13,7 @@ const Home = () => {
             <Sidebar/>
           </div>
           <div className="col-md-8 col-12 pt-2">
-            <HomeContent/>
+            <AboutContent/>
           </div>
         </div>
       </div>
@@ -23,4 +23,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default About;

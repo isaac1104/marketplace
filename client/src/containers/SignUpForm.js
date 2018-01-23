@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
 import { Button , Icon, Input } from "semantic-ui-react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 class SignUpForm extends Component {
 
@@ -102,6 +102,14 @@ class SignUpForm extends Component {
           >
             <Icon name="checkmark" /> Submit
           </Button>
+          <Link to="/">
+            <Button
+              type="button"
+              color="red"
+            >
+              <Icon name="left arrow" /> Back
+            </Button>
+          </Link>
         </div>
         {this.redirectToLogin()}
       </form>

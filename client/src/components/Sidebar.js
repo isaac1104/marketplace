@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Searchbar from "./Searchbar";
-import UserInfo from "./UserInfo";
+import Searchbar from "./../containers/Searchbar";
+import UserInfo from "./../containers/UserInfo";
 
 export default class Sidebar extends Component {
-
   render() {
     return (
       <div className="position-sticky pt-3">
@@ -16,5 +15,4 @@ export default class Sidebar extends Component {
       </div>
     );
   }
-
 }

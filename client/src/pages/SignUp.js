@@ -1,7 +1,7 @@
 import React from "react";
-import LogInForm from "./../containers/LogInForm";
+import SignUpForm from "./../containers/SignUpForm";
 
-const Login = () => {
+const SignUp = () => {
 
   const style = {
     container: {
@@ -16,9 +16,9 @@ const Login = () => {
 
   return (
     <div style={style.container}>
-      <LogInForm/>
+      <SignUpForm/>
     </div>
   );
 }
 
-export default Login;
+export default SignUp;

@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
 import { Button , Icon, Input } from "semantic-ui-react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class LogInForm extends Component {
 
@@ -56,14 +56,6 @@ class LogInForm extends Component {
           >
             <Icon name="sign in" /> Log In
           </Button>
-          <Link to="/home">
-            <Button
-              type="button"
-              color="red"
-            >
-              <Icon name="left arrow" /> Back
-            </Button>
-          </Link>
         </div>
         {this.redirectToHome()}
       </form>

@@ -10,7 +10,6 @@ class LogInForm extends Component {
   formSubmit = () => {
     const user = this.props.form.logInInfo.values;
     this.props.logInUser(user.username, user.password);
-    console.log(this.props.user);
   }
 
   redirectToHome = () => {
@@ -24,7 +23,7 @@ class LogInForm extends Component {
   }
 
   render () {
-
+  
     const { handleSubmit, pristine, submitting } = this.props;
 
     return (

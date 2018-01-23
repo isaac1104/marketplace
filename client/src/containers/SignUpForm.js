@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
 import { Button , Icon, Input } from "semantic-ui-react";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class SignUpForm extends Component {
 
@@ -12,14 +12,18 @@ class SignUpForm extends Component {
   }
 
   formSubmit = () => {
-    const user = this.props.form.signUpUserInfo.values;
-    this.props.postNewUser(user.username, user.password, user.firstname, user.lastname, user.email, user.zipcode, user.phone);
+    if (this.props.form.signUpUserInfo.values.password === this.props.form.signUpUserInfo.values.verify_password) {
+      const user = this.props.form.signUpUserInfo.values;
+      this.props.postNewUser(user.username, user.password, user.firstname, user.lastname, user.email, user.zipcode, user.phone);
+    } else {
+      console.log("Passwords don't match");
+    }
   }
 
   redirectToLogin = () => {
     if (this.props.newUser === true) {
       return (
-        <Redirect to={ "/login" }/>
+        <Redirect to={ "/" }/>
       );
     }
   }
@@ -47,6 +51,15 @@ class SignUpForm extends Component {
             component={ Input }
             type="password"
             placeholder="password"
+          />
+        </div>
+        <label>Verify Password</label>
+        <div style={{ margin : "10px 0 10px 0" }}>
+          <Field
+            name="verify_password"
+            component={ Input }
+            type="password"
+            placeholder="verify password"
           />
         </div>
         <label>First Name</label>
@@ -94,7 +107,7 @@ class SignUpForm extends Component {
             placeholder="Phone Number"
           />
         </div>
-        <div style={{marginTop: "20px"}}>
+        <div style={{marginTop: "20px"}} className="text-center">
           <Button
             type="submit"
             disabled={pristine || submitting}
@@ -102,14 +115,6 @@ class SignUpForm extends Component {
           >
             <Icon name="checkmark" /> Submit
           </Button>
-          <Link to="/">
-            <Button
-              type="button"
-              color="red"
-            >
-              <Icon name="left arrow" /> Back
-            </Button>
-          </Link>
         </div>
         {this.redirectToLogin()}
       </form>

@@ -17,7 +17,7 @@ export default class HomeContent extends Component {
         <div className="row">
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>
@@ -28,7 +28,7 @@ export default class HomeContent extends Component {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>
@@ -39,7 +39,7 @@ export default class HomeContent extends Component {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>
@@ -50,7 +50,7 @@ export default class HomeContent extends Component {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>
@@ -61,7 +61,7 @@ export default class HomeContent extends Component {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>
@@ -72,7 +72,7 @@ export default class HomeContent extends Component {
           </div>
           <div className="col-12 col-sm-6 col-md-4 mb-2">
             <div className="card">
-              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300"/></Link>
+              <Link to="#"><img className="card-img-top img-fluid" src="http://via.placeholder.com/300x300" alt="card"/></Link>
               <div className="card-body">
                 <Link to="#"><h5 className="card-title">Brand New Bed Frame</h5></Link>
                 <p className="text-muted">Buena Park, CA</p>

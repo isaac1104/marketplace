@@ -1,5 +1,5 @@
 import React from "react";
-import SignUpForm from "./../containers/SignUpForm";
+import LogInForm from "./../containers/LogInForm";
 import background from "./../images/background/la.jpg";
 import { Link } from "react-router-dom";
 
@@ -31,10 +31,10 @@ const Landing = () => {
       <div style={style.font}>
         <h1>Welcome to the MARKETPLACE</h1>
         <div style={{ backgroundColor: "#cfd1d6", padding: "20px" }}>
-          <SignUpForm/>
+          <LogInForm/>
         </div>
         <div style={style.button}>
-          <Link to="/login" style={{ color:"tomato" }}> Sign In</Link>
+          <Link to="/signup" style={{ color:"tomato" }}> Sign Up</Link>
         </div>
         <div style={style.button}>
           <Link to="/home" style={{ color:"tomato" }}> Continue as guest</Link>

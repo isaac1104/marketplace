@@ -1,9 +1,9 @@
 import React from "react";
 import Sidebar from "./../components/Sidebar";
 import Navbar from "./../components/Navbar";
-import HomeContent from "./../containers/HomeContent";
+import MarketContent from "./../containers/MarketContent";
 
-const Home = () => {
+const Market = () => {
   return (
     <div>
       <Navbar/>
@@ -13,7 +13,7 @@ const Home = () => {
             <Sidebar/>
           </div>
           <div className="col-md-8 col-12 pt-2">
-            <HomeContent/>
+            <MarketContent/>
           </div>
         </div>
       </div>
@@ -23,4 +23,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default Market;

@@ -2,8 +2,41 @@ import React, { Component } from "react";
 import PostItem from "./../components/PostItem";
 import Filter from "./../components/Filter";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actions from "./../actions";
+import { Loader } from "semantic-ui-react";
 
-export default class AboutContent extends Component {
+class MarketContent extends Component {
+
+  componentDidMount() {
+    this.props.fetchPostData();
+  }
+
+  renderPosting = () => {
+    if (this.props.postData) {
+      return this.props.postData.map(post => {
+        return (
+          <PostItem
+            id={post.id}
+            title={post.title}
+            location={post.location}
+            timestamp={post.timestamp}
+            price={post.price}
+            key={post.id}
+          />
+        );
+      });
+    } else {
+      return (
+        <Loader active
+          size="massive"
+          inline="centered"
+        >
+          Loading
+        </Loader>
+      );
+    }
+  }
 
   render () {
     return (
@@ -13,30 +46,17 @@ export default class AboutContent extends Component {
         <hr className="my-3"/>
         <Filter />
         <div className="row">
-          {/* Map Through post data and pass into PostItem as props? */}
-          <PostItem
-            id="1"
-            title="Post Title"
-            location="city, state"
-            timestamp="1/23/2018 12:23 PM"
-            price="20.00"
-          />
-          <PostItem
-            id="2"
-            title="Post Title"
-            location="city, state"
-            timestamp="1/23/2018 12:23 PM"
-            price="20.00"
-          />
-          <PostItem
-            id="3"
-            title="Post Title"
-            location="city, state"
-            timestamp="1/23/2018 12:23 PM"
-            price="20.00"
-          />
+          {this.renderPosting()}
         </div>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    postData: state.postData
+  }
+}
+
+export default connect(mapStateToProps, actions)(MarketContent);

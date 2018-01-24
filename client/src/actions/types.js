@@ -3,3 +3,4 @@ export const POST_NEW_USER = "POST_NEW_USER";
 export const RESET_USER_STATE = "RESET_USER_STATE";
 export const LOG_IN_USER = "LOG_IN_USER";
 export const FETCH_POST_DATA = "FETCH_POST_DATA";
+export const FETCH_SINGLE_POST_DATA = "FETCH_SINGLE_POST_DATA";

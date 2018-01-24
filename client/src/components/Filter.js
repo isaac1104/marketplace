@@ -8,9 +8,12 @@ export default class Filter extends Component {
         <div className="form-group">
           <label>Category</label>
           <select className="form-control">
-            <option>Furniture</option>
-            <option>Electronics</option>
-            <option>Health & Beauty</option>
+            <option value="">All</option>
+            <option value="furniture">Furniture</option>
+            <option value="electronics">Electronics</option>
+            <option value="health&beauty">Health & Beauty</option>
+            <option value="books">Books</option>
+            <option value="officesupplies">Office Supplies</option>
           </select>
         </div>
         <div className="row justify-content-center">

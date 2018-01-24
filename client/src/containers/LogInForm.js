@@ -7,18 +7,24 @@ import { Redirect } from "react-router-dom";
 
 class LogInForm extends Component {
 
+  componentDidMount() {
+    this.props.resetLogIn();
+  }
+
   formSubmit = () => {
     const user = this.props.form.logInInfo.values;
     this.props.logInUser(user.username, user.password);
   }
 
   redirectToHome = () => {
-    if (this.props.user.data) {
+    if (this.props.user.loggedIn === true) {
       return (
         <Redirect to={ "/home" }/>
       );
-    } else if (this.props.user.data === "") {
-        console.log("username password no match");
+    } else if (this.props.user.loggedIn === false) {
+      return (
+        <span className="badge badge-pill badge-danger">Invalid username & password combination</span>
+      );
     }
   }
 

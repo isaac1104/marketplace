@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 const PostItem = (props) => {
   const url = `/post/${props.id}`;
+  let date = new Date(props.timestamp+' UTC');
+
   return(
     <div className="col-12 col-sm-6 col-md-4 mb-2">
       <div className="card">
@@ -10,7 +12,7 @@ const PostItem = (props) => {
         <div className="card-body">
           <Link to={url}><h5 className="card-title">{props.title}</h5></Link>
           <p className="text-muted">{props.location}</p>
-          <p><span className="badge badge-dark">{props.timestamp}</span></p>
+          <p><span className="badge badge-dark">{date.toLocaleString()}</span></p>
           <p className="card-text">$ {props.price}</p>
         </div>
       </div>

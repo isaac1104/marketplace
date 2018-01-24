@@ -2,6 +2,7 @@ import React from "react";
 import LogInForm from "./../containers/LogInForm";
 import background from "./../images/background/la.jpg";
 import { Link } from "react-router-dom";
+import "./Landing.css";
 
 const Landing = () => {
 
@@ -29,7 +30,7 @@ const Landing = () => {
   return (
     <div style={style.container}>
       <div style={style.font}>
-        <h1>Welcome to the MARKETPLACE</h1>
+        <h1 className="landing-title">Welcome to the MARKETPLACE</h1>
         <div style={{ backgroundColor: "#cfd1d6", padding: "20px" }}>
           <LogInForm/>
         </div>

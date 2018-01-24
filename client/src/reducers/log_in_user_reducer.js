@@ -11,7 +11,7 @@ function logInUserReducer(state = initialState, action) {
       return {
         ...state,
         data: action.payload,
-        loggedIn: true
+        loggedIn: action.payload? true:false
       }
     default:
       return state;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Input } from "semantic-ui-react";
 
 export default class Filter extends Component {
 
@@ -14,6 +15,7 @@ export default class Filter extends Component {
             <option value="health&beauty">Health & Beauty</option>
             <option value="books">Books</option>
             <option value="officesupplies">Office Supplies</option>
+            <option value="automotive">Automotive</option>
           </select>
         </div>
         <div className="row justify-content-center">
@@ -28,20 +30,30 @@ export default class Filter extends Component {
           </div>
           <div className="col-10 col-lg-8">
             <div className="form-group">
-              <label>Price Range: </label>
+              <label className="d-block">Price Range: </label>
               <div className="row no-gutters">
-                <div className="col-5 input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">$</div>
-                  </div>
-                  <input type="number" min="0" className="form-control" placeholder="min" />
+                <div className="col-5">
+                  <Input
+                    icon="dollar"
+                    iconPosition="left"
+                    size="small"
+                    type="number"
+                    autoComplete="off"
+                    placeholder="min"
+                    fluid
+                  />
                 </div>
                 <div className="mx-2 mt-2">&mdash;</div>
-                <div className="col-5 input-group">
-                  <div className="input-group-prepend">
-                    <div className="input-group-text">$</div>
-                  </div>
-                  <input type="number" min="0" className="form-control" placeholder="max" />
+                <div className="col-5">
+                  <Input
+                    icon="dollar"
+                    iconPosition="left"
+                    size="small"
+                    type="number"
+                    autoComplete="off"
+                    placeholder="max"
+                    fluid
+                  />
                 </div>
               </div>
             </div>

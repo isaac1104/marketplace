@@ -1,6 +1,6 @@
 import React from 'react';
-import CommentField from "./CommentField";
-import CommentList from "./CommentList";
+import CommentField from "./../containers/CommentField";
+import CommentList from "./../containers/CommentList";
 
 const Comment = () => {
   return (

@@ -18,12 +18,12 @@ class LogInForm extends Component {
         <Redirect to={ "/home" }/>
       );
     } else if (this.props.user.data === "") {
-      console.log("username and password not matching");
+        console.log("username password no match");
     }
   }
 
   render () {
-  
+
     const { handleSubmit, pristine, submitting } = this.props;
 
     return (

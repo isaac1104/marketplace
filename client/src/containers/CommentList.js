@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommentItem from "./CommentItem";
+import CommentItem from "./../components/CommentItem";
 
 export default class CommentList extends Component {
   render() {

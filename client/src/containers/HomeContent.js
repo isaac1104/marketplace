@@ -1,9 +1,17 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import * as actions from "./../actions";
+import { connect } from "react-redux";
 import PostItem from "./../components/PostItem";
 
-export default class HomeContent extends Component {
+class HomeContent extends Component {
+
+  componentDidMount() {
+    this.props.fetchPostData();
+  }
 
   render () {
+    console.log(this.props.postData);
     return (
       <div>
         <div className="jumbotron">
@@ -28,3 +36,11 @@ export default class HomeContent extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    postData: state.postData
+  }
+}
+
+export default connect(mapStateToProps, actions)(HomeContent);

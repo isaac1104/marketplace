@@ -18,8 +18,6 @@ const Market = () => {
         </div>
       </div>
     </div>
-
-
   );
 }
 

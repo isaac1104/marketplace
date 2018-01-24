@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import * as actions from "./../actions";
 import { connect } from "react-redux";
 import PostItem from "./../components/PostItem";
+import { Loader } from "semantic-ui-react";
 
 class HomeContent extends Component {
 
@@ -10,8 +10,34 @@ class HomeContent extends Component {
     this.props.fetchPostData();
   }
 
+  renderPosting = () => {
+    if (this.props.postData) {
+      return this.props.postData.map(post => {
+        return (
+          <PostItem
+            id={post.id}
+            title={post.title}
+            location={post.location}
+            timestamp={post.timestamp}
+            price={post.price}
+            key={post.id}
+          />
+        );
+      });
+    } else {
+      return (
+        <Loader active
+          size="massive"
+          inline="centered"
+        >
+          Loading
+        </Loader>
+      );
+    }
+  }
+
   render () {
-    console.log(this.props.postData);
+
     return (
       <div>
         <div className="jumbotron">
@@ -23,14 +49,7 @@ class HomeContent extends Component {
         <h1>Recently Uploaded</h1>
         <hr className="my-2"/>
         <div className="row">
-          {/* Map Through post data and pass into PostItem as props? */}
-          <PostItem
-            id="1"
-            title="Post Title"
-            location="city, state"
-            timestamp="1/23/2018 12:23 PM"
-            price="20.00"
-          />
+          {this.renderPosting()}
         </div>
       </div>
     );

@@ -10,13 +10,17 @@ class PostContent extends Component {
     this.props.fetchSinglePostData(this.props.postId);
   }
 
+  goBack = () => {
+    window.history.back();
+  }
+
   renderDetail = () => {
     if (this.props.postData) {
       const data = this.props.postData[0];
       return (
         <div>
+          <button className="btn btn-outline-info rounded-circle" onClick={() => {this.goBack()}}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
           <h1>{data.title}</h1>
-          <p className="text-danger">Post Id : {this.props.postId}. <br/>Use postId to call specific post using something like postdata.php?id=postId</p>
           <h4>{data.author}<span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {data.timestamp}</span></h4>
           <hr/>
           <img className="card-img img-fluid" src="http://via.placeholder.com/350x200" alt=""/>

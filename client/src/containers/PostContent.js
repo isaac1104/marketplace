@@ -17,12 +17,11 @@ class PostContent extends Component {
   renderDetail = () => {
     if (this.props.postData) {
       const data = this.props.postData[0];
-      let date = new Date(data.timestamp+' UTC');
       return (
         <div>
           <button className="btn btn-outline-info rounded-circle" onClick={() => {this.goBack()}}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
           <h1>{data.title}</h1>
-          <h4>{data.author}<span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {date.toLocaleString()}</span></h4>
+          <h4>{data.author}<span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {data.timestamp}</span></h4>
           <hr/>
           <img className="card-img img-fluid" src="http://via.placeholder.com/350x200" alt=""/>
           <hr/>

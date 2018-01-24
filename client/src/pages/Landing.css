@@ -1,0 +1,13 @@
+.landing-title {
+  animation: fadeDown 1.5s forwards ease-in-out;
+}
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-75%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

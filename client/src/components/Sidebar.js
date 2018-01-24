@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
         <div className="card p-3 mb-3">
           <UserInfo/>
         </div>
-        <div className="card p-4 my-3">
+        <div className="card py-3 my-3">
           <Searchbar/>
         </div>
       </div>

@@ -39,6 +39,7 @@ class MarketContent extends Component {
   }
 
   render () {
+
     return (
       <div>
         <h1 className="d-inline-block">Market</h1>
@@ -55,7 +56,8 @@ class MarketContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    postData: state.postData
+    postData: state.postData,
+    filteredData: state.filter
   }
 }
 

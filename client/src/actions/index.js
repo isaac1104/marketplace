@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE } from "./types";
+import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE, FILTER_POST } from "./types";
 
 export const fetchData = () => async dispatch => {
   const request = await axios.get("https://54.215.120.93/api/users/userdata.php");
@@ -17,6 +17,12 @@ export const fetchSinglePostData = id => async dispatch => {
   const request = await axios.get(`https://54.215.120.93/api/posts/postdata.php?id=${id}`)
   const { data } = request;
   dispatch({ type: FETCH_SINGLE_POST_DATA, payload: data });
+}
+
+export const fetchFilteredPostData = (category, order, min, max) => async dispatch => {
+  const request = await axios.get(`https://54.215.120.93/api/posts/filter.php?category=${category}&order=${order}&min=${min}&max=${max}`);
+  const { data } = request;
+  dispatch({ type: FILTER_POST, payload: data });
 }
 
 export const postNewUser = (username, password, firstname, lastname, email, zipcode, phone) => async dispatch => {

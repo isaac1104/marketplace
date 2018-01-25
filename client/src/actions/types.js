@@ -8,3 +8,5 @@ export const FETCH_POST_DATA = "FETCH_POST_DATA";
 export const FETCH_SINGLE_POST_DATA = "FETCH_SINGLE_POST_DATA";
 export const ADD_NEW_POST = "ADD_NEW_POST";
 export const RESET_POST_STATE = "RESET_POST_STATE";
+export const FILTER_POST = "FILTER_POST";
+export const ORDER_BY_POST = "ORDER_BY_POST";

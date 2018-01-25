@@ -299,7 +299,6 @@ data: [
   .
   .
   .
-  "results": 5  // This is the count of total posts in database
 ]
 ```
 - Error Response

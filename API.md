@@ -262,7 +262,7 @@ $.ajax({
 ### Posts
 
 #### Display Post(s)
-_load single post or all posts from database in JSON format __From newest to oldest__ _
+_load single post or all posts from database in JSON format __From newest to oldest__._
 
 - URL <br/>
 /api/posts/postdata.php <br/>

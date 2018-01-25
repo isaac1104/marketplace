@@ -1,6 +1,6 @@
 import { FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, FILTER_POST, SEARCH_POST } from "./../actions/types";
 
-const initialState = [];
+const initialState = null;
 
 function postDataReducer(state = initialState, action) {
   switch (action.type) {

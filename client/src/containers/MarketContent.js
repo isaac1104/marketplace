@@ -26,7 +26,7 @@ class MarketContent extends Component {
           />
         );
       });
-    } else if (this.props.postData === "" || this.props.postData.length === 0) {
+    } else if (this.props.postData === "") {
       return (
         <div className="jumbotron jumbotron-fluid w-100">
           <div className="container">
@@ -47,7 +47,7 @@ class MarketContent extends Component {
   }
 
   render () {
-  
+
     return (
       <div>
         <h1 className="d-inline-block">Market</h1>

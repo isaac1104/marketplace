@@ -37,7 +37,7 @@ class SignUpForm extends Component {
   }
 
   render () {
-    console.log(this.props.newUser);
+
     const { handleSubmit, pristine, submitting } = this.props;
 
     return (

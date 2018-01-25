@@ -8,26 +8,26 @@
 ### Database Structure
 
 - users
-  - id : int(11); auto-increasing;
-  - username : varchar(255);
-  - password : varchar(255); Will be stored in hashed format;
-  - role : varchar(255); default  to "user";
-  - email : text;
-  - firstname : text;
-  - lastname : text;
-  - phone : int(11);
-  - zipcode : int(11);
-  - image : varchar(255); Name of Image file;
+  - id=[int] // auto-increasing
+  - username=[varchar]
+  - password=[varchar] // Will be stored in hashed format;
+  - role=[varchar] // default  to "user"
+  - email=[text]
+  - firstname=[text]
+  - lastname=[text]
+  - phone=[int];
+  - zipcode=[int]
+  - image=[varchar] // Name of Image file;
 - posts
-  - id : int(11); auto-increasing;
-  - category : text;
-  - title : text;
-  - author : text;
-  - description : text;
-  - location : text;
-  - image : varchar(255); Name of Image file;
-  - price : decimal(19,2);
-  - timestamp : datetime; default to current_timestamp;
+  - id=[int] // auto-increasing;
+  - category=[text]
+  - title=[text]
+  - author=[text]
+  - description=[text]
+  - location=[text]
+  - image=[varchar] // Name of Image file
+  - price=[decimal(.xx)]
+  - timestamp=[datetime] // default to current_timestamp;
 
 ### Folder Structure
 
@@ -63,19 +63,19 @@ ex) to call post data JSON, the url would be: https://54.215.120.93/api/posts/po
 #### Add User
 _Register new user and info to the user database_
 
-- URL
+- URL <br/>
 /api/users/add.php
-- Method
+- Method <br/>
 `POST`
-- Data Params
-  - Required: 
-  username=[varchar]
-  password=[varchar]
-  email=[text]
-  firstname=[text]
-  lastname=[text]
-  phone=[int]
-  zipcode=[int]
+- Data Params <br/>
+  - Required:  <br/>
+  username=[varchar] <br/>
+  password=[varchar] <br/>
+  email=[text] <br/>
+  firstname=[text] <br/>
+  lastname=[text] <br/>
+  phone=[int] <br/>
+  zipcode=[int] <br/>
 - Success Response
 ```
 data:{
@@ -117,14 +117,14 @@ $.ajax({
 #### Authentication
 _Logging in user by verifying username and password combination_
 
-- URL
+- URL <br/>
 /api/users/auth.php
-- Method
+- Method <br/>
 `POST`
-- Data Params
-  - Required
-  username=[varchar]
-  password=[varchar]
+- Data Params <br/>
+  - Required <br/>
+  username=[varchar] <br/>
+  password=[varchar] <br/>
 - Success Response
 ```
 data: [
@@ -169,13 +169,13 @@ $.ajax({
 #### Delete a user
 _Delete a user from database using user id_
 
-- URL
-/api/users/delete.php
-- Method
-`POST`
-- Data Params
-  - Required
-  id=[int]
+- URL <br/>
+/api/users/delete.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  id=[int] <br/>
 - Success Response
 ```
 data: {
@@ -208,21 +208,21 @@ $.ajax({
 #### Edit User
 _Update __either__ user's first name, last name, email, phone number, and zip code __or__ user's password_
 
-- URL
-/api/users/edit.php
-- Method
-`POST`
-- Data Params
-  - Required
-  password=[varchar]  _For password change_
-  __OR__
-  email=[text]
-  firstname=[text]
-  lastname=[text]
-  phone=[int]
-  zipcode=[int]  _For info change_
-  - Optional
-  image=[varchar]
+- URL <br/>
+/api/users/edit.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  password=[varchar] &nbsp; _For password change_  <br/>
+  __OR__ <br/>
+  email=[text] <br/>
+  firstname=[text] <br/>
+  lastname=[text] <br/>
+  phone=[int] <br/>
+  zipcode=[int] &nbsp; _For info change_  <br/>
+  - Optional <br/>
+  image=[varchar] <br/>
 - Success Response
 ```
 data: {
@@ -264,13 +264,13 @@ $.ajax({
 #### Display Post(s)
 _load single post or all posts from database in JSON format __From newest to oldest__ _
 
-- URL
-/api/posts/postdata.php
-- Method
-`GET`
-- URL Params
-  - Optional
-  id=[int]
+- URL <br/>
+/api/posts/postdata.php <br/>
+- Method <br/>
+`GET` <br/>
+- URL Params <br/>
+  - Optional <br/>
+  id=[int] <br/>
 - Success Response
 ```
 data: [
@@ -342,20 +342,20 @@ __NOTE: When rendering description. Use `<pre></pre>`(tag) OR `white-space: pre`
 #### Add a Post
 _Add a post_
 
-- URL
-/api/posts/add.php
-- Method
-`POST`
-- Data Params
-  - Required
-  title=[text]
-  category=[text]
-  author=[varchar]
-  description=[text]
-  price=[int]
-  location=[text]
-  - Optional
-  image=[varchar]
+- URL <br/>
+/api/posts/add.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  title=[text] <br/>
+  category=[text] <br/>
+  author=[varchar] <br/>
+  description=[text] <br/>
+  price=[int] <br/>
+  location=[text] <br/>
+  - Optional <br/>
+  image=[varchar] <br/>
 - Success Response
 ```
 data: {

@@ -29,14 +29,14 @@ export const postNewUser = (username, password, firstname, lastname, email, zipc
         zipcode,
         phone
       });
-  const { success } = request.data;
-  dispatch({ type: POST_NEW_USER, payload: success });
+  const { data } = request;
+  dispatch({ type: POST_NEW_USER, payload: data });
 }
 
 export const resetUserState = () => {
   return {
     type: RESET_USER_STATE,
-    payload: null
+    payload: {}
   }
 }
 

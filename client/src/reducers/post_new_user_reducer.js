@@ -1,6 +1,6 @@
 import { POST_NEW_USER, RESET_USER_STATE } from "./../actions/types";
 
-const initialState = null;
+const initialState = {};
 
 function postNewUserReducer(state = initialState, action) {
   switch (action.type) {

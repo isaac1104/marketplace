@@ -390,5 +390,93 @@ $.ajax({
 });
 ```
 
+#### Edit a Post
+_Edit a post with new input description, image, price, and location_
+
+- URL <br/>
+/api/posts/edit.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  description=[text] <br/>
+  price=[int] <br/>
+  location=[text] <br/>
+  id=[int] <br/>
+  - Optional <br/>
+  image=[varchar] <br/>
+- Success Response
+```
+data: {
+  success: true
+}
+```
+- Error Response
+```
+data: {
+  success: false,
+  error: true
+}
+```
+- Example
+```
+var edit_form = {
+      description : $('#description').val(),
+      price : $('#price').val(),
+      location : $('#location').val(),
+      id: // this post's id
+    }
+    
+$.ajax({
+  url:'https://54.215.120.93//api/posts/edit.php',
+  type: 'POST',
+  contentType : 'application/json',
+  data : JSON.stringify(edit_form)
+})
+.done(function(data){
+  console.log(data);
+});
+
+This will update the post with given ID value with new data input
+```
+
+#### Delete a user
+_Delete a post from database using post id_
+
+- URL <br/>
+/api/posts/delete.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  id=[int] <br/>
+- Success Response
+```
+data: {
+  success: true
+}
+```
+- Error Response
+```
+data: {
+  success: false,
+  error: true,
+  msg: "id does not exist"
+}
+```
+- Example
+```
+var id = $('#delete-post-id').val();
+
+$.ajax({
+        url: 'https://54.215.120.93/api/posts/delete.php',
+        type: 'POST',
+        contentType : 'application/json',
+        data : JSON.stringify( {id} )
+      })
+      .done(function(data) {
+        console.log(data);
+      })
+```
 
 

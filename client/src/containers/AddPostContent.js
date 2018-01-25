@@ -3,6 +3,7 @@ import PostForm from "./PostForm";
 import { Dimmer, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
+import { Link } from "react-router-dom";
 
 class PostContent extends Component {
 
@@ -20,9 +21,11 @@ class PostContent extends Component {
       return (
         <div className="container">
           <Dimmer active>
-            <Header as="h2" style={{ color: "white" }}>
-              Please sign in to create a post
+            <Header as="h2" style={{ color:"white" }}>
+              Please <Link to="/">Sign In</Link> to upload a post.
             </Header>
+            <p className="text-muted">Don't have an account yet?</p>
+            <Link to="/signup">Sign up for full features for free!</Link>
           </Dimmer>
         </div>
       );

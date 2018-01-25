@@ -7,6 +7,8 @@ import Market from "./../pages/Market";
 import Post from "./../pages/Post";
 import AddPost from "./../pages/AddPost";
 import MyProfile from "./../pages/MyProfile";
+import MyPost from "./../pages/MyPost";
+import MyComment from "./../pages/MyComment";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -22,6 +24,8 @@ const App = () => {
           <Route exact path="/post/:postId" component={Post}/>
           <Route exact path="/add-post" component={AddPost}/>
           <Route exact path="/my-profile" component={MyProfile}/>
+          <Route exact path="/my-posts" component={MyPost} />
+          <Route exact path="/my-comments" component={MyComment} />
         </Switch>
       </div>
     </Router>

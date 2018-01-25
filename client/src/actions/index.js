@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE } from "./types";
+import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST } from "./types";
 
 export const fetchData = () => async dispatch => {
   const request = await axios.get("https://54.215.120.93/api/users/userdata.php");
@@ -58,4 +58,16 @@ export const resetLogIn = () => {
     type: RESET_LOGIN_STATE,
     payload: null
   }
+}
+
+export const addNewPost = (title, category, location, price, description) => async dispatch => {
+  const request = await axios.post("https://54.215.120.93/api/posts/add.php", {
+    title,
+    category,
+    location,
+    price,
+    description
+  });
+  const { data } = request;
+  dispatch({ type: ADD_NEW_POST, payload: data });
 }

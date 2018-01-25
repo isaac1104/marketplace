@@ -9,7 +9,8 @@ import { connect } from 'react-redux';
 class Search extends Component {
 
   formSubmit = ({ search }) => {
-    this.props.searchPost(search);
+    // this.props.searchPost(search);
+    window.location.href="/search/"+search;
   }
 
   render() {

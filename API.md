@@ -58,10 +58,9 @@
      ├── comments
      |	   ├── commentdata.php
      |     ├── add.php
-     |     ├── edit.php
      |     └── delete.php
-     ├──
-     └──
+     ├── messages
+     └── bookmarks
      
 ex) to call post data JSON, the url would be: https://54.215.120.93/api/posts/postdata.php
 ```
@@ -601,4 +600,144 @@ $.ajax({
       })
 ```
 
+### Comments
 
+#### Display Comments
+_load comments under specific post_id from database in JSON format __From newest to oldest__._
+
+- URL <br/>
+/api/comments/commentdata.php <br/>
+- Method <br/>
+`GET` <br/>
+- URL Params <br/>
+  - Required <br/>
+  post_id=[int] <br/>
+- Success Response
+```
+data: [
+  "0": {
+    "id": "2",
+    "post_id": "3",
+    "username":"AnotherCommentWriter",
+    "comment":"another test comment",
+    "timestamp": "2018-01-24 21:14:45"
+  },
+  "1": {
+    "id": "1",
+    "post_id": "3",
+    "username":"commentWriter",
+    "comment":"test comment",
+    "timestamp": "2018-01-22 00:18:50"
+  },
+  .
+  .
+  .
+]
+```
+- Error Response
+```
+data: {}
+// Returns nothing if there's no comment in the database
+```
+- Example
+```
+var post_id = 5
+
+$.ajax({
+  url: "https://54.215.120.93/api/comments/commentdata.php?post_id="+post_id
+})
+.done(function(data) {
+  if (data) {
+    console.log(data);
+  } else {
+    console.log("There is no comment for this post");
+  }
+});
+
+```
+
+__NOTE: When rendering comment. Use `<pre></pre>`(tag) OR `white-space: pre`(Style) to render new line break correctly.__
+
+#### Add a Comment
+_Add a comment_
+
+- URL <br/>
+/api/comments/add.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  username=[text] <br/>
+  comment=[text] <br/>
+  post_id=[int] <br/>
+- Success Response
+```
+data: {
+  success: true
+}
+```
+- Error Response
+```
+data: {
+  success: false,
+  error: true
+}
+```
+- Example
+```
+var comment_form = {
+      username : "writer",
+      comment : $('textarea#comment').val(),
+      post_id : $('#this_post_id').val()
+    }
+    
+$.ajax({
+  url:'https://54.215.120.93//api/comments/add.php',
+  type: 'POST',
+  contentType : 'application/json',
+  data : JSON.stringify(comment_form)
+})
+.done(function(data){
+  console.log(data);
+});
+```
+
+
+#### Delete a Comment
+_Delete a Comment from database using comment\_id_
+
+- URL <br/>
+/api/posts/delete.php <br/>
+- Method <br/>
+`POST` <br/>
+- Data Params <br/>
+  - Required <br/>
+  id=[int] <br/>
+- Success Response
+```
+data: {
+  success: true
+}
+```
+- Error Response
+```
+data: {
+  success: false,
+  error: true,
+  msg: "id does not exist"
+}
+```
+- Example
+```
+var id = $('#delete-comment-id').val();
+
+$.ajax({
+        url: 'https://54.215.120.93/api/comments/delete.php',
+        type: 'POST',
+        contentType : 'application/json',
+        data : JSON.stringify( {id} )
+      })
+      .done(function(data) {
+        console.log(data);
+      })
+```

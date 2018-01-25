@@ -12,7 +12,7 @@ class HomeContent extends Component {
 
   renderPosting = () => {
     if (this.props.postData) {
-      return this.props.postData.map(post => {
+      return this.props.postData.slice(0,6).map(post => {
         return (
           <PostItem
             id={post.id}

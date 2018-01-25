@@ -18,6 +18,7 @@ class PostContent extends Component {
     if (this.props.postData) {
       const data = this.props.postData[0];
       let date = new Date(data.timestamp+' UTC');
+      let description = data.description.toString();
       return (
         <div>
           <button className="btn btn-outline-info rounded-circle" onClick={() => {this.goBack()}}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
@@ -27,7 +28,7 @@ class PostContent extends Component {
           <img className="card-img img-fluid" src="http://via.placeholder.com/350x200" alt=""/>
           <hr/>
           <div className="card-body">
-            <p className="card-text">{data.description}</p>
+            <p className="card-text" style={{whiteSpace:"pre"}}>{description}</p>
             <p className="card-text">{data.location}</p>
             <p className="card-text">$ {data.price}</p>
           </div>

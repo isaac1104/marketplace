@@ -76,18 +76,19 @@ class PostForm extends Component {
             </div>
             <div className="text-center">
               <Button
-                className="btn btn-outline-primary mr-5"
+                className="btn btn-outline-primary mb-2 mr-3"
                 type="submit"
                 disabled={pristine || submitting}
                 color="blue"
               >
                 Upload
               </Button>
+              <Button color="red" onClick={()=>{window.history.back();}} type="button">Cancel</Button>
             </div>
           </div>
           {this.redirectToMarket()}
         </form>
-        <Button color="red" onClick={()=>{window.history.back()}}>Cancel</Button>
+
       </div>
     );
   }

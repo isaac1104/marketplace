@@ -440,7 +440,7 @@ $.ajax({
 This will update the post with given ID value with new data input
 ```
 
-#### Delete a user
+#### Delete a post
 _Delete a post from database using post id_
 
 - URL <br/>
@@ -473,6 +473,118 @@ $.ajax({
         type: 'POST',
         contentType : 'application/json',
         data : JSON.stringify( {id} )
+      })
+      .done(function(data) {
+        console.log(data);
+      })
+```
+
+#### Filtering posts
+_Filter post by certain conditions passed along with url_
+
+- URL <br/>
+/api/posts/filter.php <br/>
+- Method <br/>
+`GET` <br/>
+- Data Params <br/>
+  - Optional <br/>
+  category=[text] <br/>
+  order=[text] <br/>
+  min=[decimal] <br/>
+  max=[decimal] <br/>
+- Success Response
+```
+// returns posts with matching criteria
+	
+data: {
+	[
+		"0":{
+			"title": something,
+			"author": someone,
+			.
+			.
+			.
+		},
+		"1":{
+			"title": something else,
+			.
+			.
+			.
+		}
+		.
+		.
+		.
+	]
+}
+```
+- Error Response
+```
+data: {}
+
+// returns nothing if no match
+```
+- Example
+```
+var category = $('#category').val();
+var min = 10;
+var max = 100;
+
+$.ajax({
+        url: 'https://54.215.120.93/api/posts/filter.php?category='+category+'&min='+min+'&max='+max
+      })
+      .done(function(data) {
+        console.log(data);
+      })
+```
+
+#### Searching from posts
+_Search post by search query, find all posts with similar(LIKE) title, description, or author_
+
+- URL <br/>
+/api/posts/search.php <br/>
+- Method <br/>
+`GET` <br/>
+- Data Params <br/>
+  - Optional <br/>
+  query=[text]
+- Success Response
+```
+// returns posts with matching search query
+	
+data: {
+	[
+		"0":{
+			"title": something,
+			"author": someone,
+			.
+			.
+			.
+		},
+		"1":{
+			"title": something else,
+			.
+			.
+			.
+		}
+		.
+		.
+		.
+	]
+}
+```
+- Error Response
+```
+data: {}
+
+// returns nothing if no match
+```
+- Example
+```
+var search = $('#search').val();
+
+
+$.ajax({
+        url: 'https://54.215.120.93/api/posts/search.php?query='+search
       })
       .done(function(data) {
         console.log(data);

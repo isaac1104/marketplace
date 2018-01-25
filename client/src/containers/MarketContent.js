@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PostItem from "./../components/PostItem";
-import Filter from "./../components/Filter";
+import Filter from "./Filter";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
@@ -30,7 +30,7 @@ class MarketContent extends Component {
       return (
         <div className="jumbotron jumbotron-fluid w-100">
           <div className="container">
-            <h1 className="text-center">No Matching Result.</h1>
+            <h1 className="text-center">No Matching Result</h1>
           </div>
         </div>
       );

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE, FILTER_POST } from "./types";
+import { FETCH_DATA, POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE, FILTER_POST, SEARCH_POST } from "./types";
 
 export const fetchData = () => async dispatch => {
   const request = await axios.get("https://54.215.120.93/api/users/userdata.php");
@@ -84,4 +84,10 @@ export const resetPostState = () => {
     type: RESET_POST_STATE,
     payload: {}
   }
+}
+
+export const searchPost = value => async dispatch => {
+  const request = await axios.get(`https://54.215.120.93/api/posts/search.php?query=${value}`);
+  const { data } = request;
+  dispatch({ type: SEARCH_POST, payload: data });
 }

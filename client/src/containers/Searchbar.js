@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class Search extends Component {
 
   formSubmit = ({ search }) => {
-    console.log(search);
+    this.props.searchPost(search);
   }
 
   render() {
@@ -25,6 +25,7 @@ class Search extends Component {
           <Field
             name="search"
             component={SearchField}
+            onFocus={(e)=>{e.target.select()}}
           />
           <Button
             color="teal"

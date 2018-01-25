@@ -12,8 +12,8 @@ class SignUpForm extends Component {
   }
 
   formSubmit = () => {
-    if (this.props.form.signUpUserInfo.values.password === this.props.form.signUpUserInfo.values.verify_password) {
-      const user = this.props.form.signUpUserInfo.values;
+    const user = this.props.form.signUpUserInfo.values;
+    if (user.password === user.verify_password) {
       this.props.postNewUser(user.username, user.password, user.firstname, user.lastname, user.email, user.zipcode, user.phone);
     } else {
       console.log("Passwords don't match");
@@ -21,15 +21,23 @@ class SignUpForm extends Component {
   }
 
   redirectToLogin = () => {
-    if (this.props.newUser === true) {
+    if (this.props.newUser.success) {
       return (
         <Redirect to={ "/" }/>
+      );
+    } else if (this.props.newUser.error) {
+      return (
+        <h6>{this.props.newUser.msg}</h6>
+      );
+    } else {
+      return (
+        <div></div>
       );
     }
   }
 
   render () {
-
+    console.log(this.props.newUser);
     const { handleSubmit, pristine, submitting } = this.props;
 
     return (

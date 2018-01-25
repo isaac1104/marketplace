@@ -28,6 +28,12 @@
   - image=[varchar] // Name of Image file
   - price=[decimal(.xx)]
   - timestamp=[datetime] // default to current_timestamp;
+- comments
+  - id=[int]
+  - post_id=[int] // for relational match with post
+  - username=[text] // for relational match with user
+  - comment=[text]
+  - timestamp=[datetime] // defaulty to current_timestamp;
 
 ### Folder Structure
 
@@ -49,7 +55,11 @@
      |     ├── edit.php
      |     ├── search.php
      |     └── filter.php
-     ├──
+     ├── comments
+     |	   ├── commentdata.php
+     |     ├── add.php
+     |     ├── edit.php
+     |     └── delete.php
      ├──
      └──
      

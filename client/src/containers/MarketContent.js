@@ -26,6 +26,14 @@ class MarketContent extends Component {
           />
         );
       });
+    } else if (this.props.postData === "") {
+      return (
+        <div className="jumbotron jumbotron-fluid w-100">
+          <div className="container">
+            <h1 className="text-center">No Matching Result.</h1>
+          </div>
+        </div>
+      );
     } else {
       return (
         <Loader active

@@ -54,6 +54,8 @@ class Filter extends Component {
                       type="number"
                       autoComplete="off"
                       fluid
+                      min="0"
+                      onFocus={(e)=>{e.target.select()}}
                     />
                   </div>
                   <div className="mx-2 mt-2">&mdash;</div>
@@ -67,6 +69,8 @@ class Filter extends Component {
                       type="number"
                       autoComplete="off"
                       fluid
+                      min="0"
+                      onFocus={(e)=>{e.target.select()}}
                     />
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Searchbar from "./../containers/Searchbar";
 import UserInfo from "./../containers/UserInfo";
 
@@ -19,13 +19,13 @@ export default class Navbar extends Component {
            <Searchbar navbar/>
            <ul className="navbar-nav ml-auto">
              <li className="nav-item py-2">
-               <Link className="nav-link" to="/home">Home</Link>
+               <NavLink className="nav-link" to="/home" activeStyle={{color:"black"}}>Home</NavLink>
              </li>
              <li className="nav-item py-2">
-               <Link className="nav-link" to="/about">About</Link>
+               <NavLink className="nav-link" to="/about" activeStyle={{color:"black"}}>About</NavLink>
              </li>
              <li className="nav-item py-2">
-               <Link className="nav-link" to="/market">Market</Link>
+               <NavLink className="nav-link" to="/market" activeStyle={{color:"black"}}>Market</NavLink>
              </li>
            </ul>
          </div>

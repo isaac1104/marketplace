@@ -1,6 +1,6 @@
-import { FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, FILTER_POST } from "./../actions/types";
+import { FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, FILTER_POST, SEARCH_POST } from "./../actions/types";
 
-const initialState = [];
+const initialState = null;
 
 function postDataReducer(state = initialState, action) {
   switch (action.type) {
@@ -9,6 +9,8 @@ function postDataReducer(state = initialState, action) {
     case FETCH_SINGLE_POST_DATA:
       return action.payload;
     case FILTER_POST:
+      return action.payload;
+    case SEARCH_POST:
       return action.payload;
     default:
       return state;

@@ -33,63 +33,60 @@ class PostForm extends Component {
     const { handleSubmit, pristine, submitting } = this.props;
 
     return (
-      <div>
-        <form onSubmit={handleSubmit(this.formSubmit)}>
-          <div>
-            <div className="form-group">
-              <label>Title</label>
-              <Field name="title" component="input" type="text" className="form-control" style={{maxWidth:"380px"}} autoComplete="off"/>
-            </div>
-            <div className="form-group">
-              <label>Category</label>
-              <Field name="category" component="select" className="form-control" style={{maxWidth:"380px"}}>
-                <option value="">Select a Category</option>
-                <option value="furniture">Furniture</option>
-                <option value="electronics">Electronics</option>
-                <option value="health&beauty">Health & Beauty</option>
-                <option value="books">Books</option>
-                <option value="officesupplies">Office Supplies</option>
-                <option value="automotive">Automotive</option>
-              </Field>
-            </div>
-            <div className="form-group w-75">
-              <label>Location</label>
-              <Field name="location" component="input" type="text" className="form-control" style={{maxWidth:"380px"}} autoComplete="off"/>
-            </div>
-            <div className="form-group w-75">
-              <label className="d-block">Price</label>
-              <Field
-                name="price"
-                component={ Input }
-                icon="dollar"
-                iconPosition="left"
-                size="small"
-                type="number"
-                autoComplete="off"
-                fluid
-                style={{maxWidth:"380px"}}
-              />
-            </div>
-            <div className="form-group">
-              <label>Description</label>
-              <Field name="description" component="textarea" type="text" className="form-control" style={{resize:"none", height: "160px"}}/>
-            </div>
-            <div className="text-center">
-              <Button
-                className="btn btn-outline-primary mb-2 mr-3"
-                type="submit"
-                disabled={pristine || submitting}
-                color="blue"
-              >
-                Upload
-              </Button>
-              <Button color="red" onClick={()=>{window.history.back();}} type="button">Cancel</Button>
-            </div>
+      <form onSubmit={handleSubmit(this.formSubmit)}>
+        <div>
+          <div className="form-group">
+            <label>Title</label>
+            <Field name="title" component="input" type="text" className="form-control" style={{maxWidth:"380px"}} autoComplete="off"/>
           </div>
-          {this.redirectToMarket()}
-        </form>
-
-      </div>
+          <div className="form-group">
+            <label>Category</label>
+            <Field name="category" component="select" className="form-control" style={{maxWidth:"380px"}}>
+              <option value="">Select a Category</option>
+              <option value="furniture">Furniture</option>
+              <option value="electronics">Electronics</option>
+              <option value="healthandbeauty">Health & Beauty</option>
+              <option value="books">Books</option>
+              <option value="officesupplies">Office Supplies</option>
+              <option value="automotive">Automotive</option>
+            </Field>
+          </div>
+          <div className="form-group w-75">
+            <label>Location</label>
+            <Field name="location" component="input" type="text" className="form-control" style={{maxWidth:"380px"}} autoComplete="off"/>
+          </div>
+          <div className="form-group w-75">
+            <label className="d-block">Price</label>
+            <Field
+              name="price"
+              component={ Input }
+              icon="dollar"
+              iconPosition="left"
+              size="small"
+              type="number"
+              autoComplete="off"
+              fluid
+              style={{maxWidth:"380px"}}
+            />
+          </div>
+          <div className="form-group">
+            <label>Description</label>
+            <Field name="description" component="textarea" type="text" className="form-control" style={{resize:"none", height: "160px"}}/>
+          </div>
+          <div className="text-center">
+            <Button
+              className="btn btn-outline-primary mb-2 mr-3"
+              type="submit"
+              disabled={pristine || submitting}
+              color="blue"
+            >
+              Upload
+            </Button>
+            <Button color="red" onClick={()=>{window.history.back();}} type="button">Cancel</Button>
+          </div>
+        </div>
+        {this.redirectToMarket()}
+      </form>
     );
   }
 }

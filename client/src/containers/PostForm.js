@@ -13,7 +13,11 @@ class PostForm extends Component {
 
   formSubmit = () => {
     const post = this.props.form.post.values;
-    this.props.addNewPost(this.props.user.data[0].username, post.title, post.category, post.location, post.price, post.description);
+    if (post.title && post.category && post.location && post.price && post.description) {
+      this.props.addNewPost(this.props.user.data[0].username, post.title, post.category, post.location, post.price, post.description);
+    } else {
+      console.log("Required field validation");
+    }
   }
 
   redirectToMarket = () => {

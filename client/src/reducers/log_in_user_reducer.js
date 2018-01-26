@@ -23,7 +23,7 @@ function logInUserReducer(state = initialState, action) {
       return {
         ...state,
         data: "",
-        loggedIn: ""
+        loggedIn: action.payload
       }
     default:
       return state;

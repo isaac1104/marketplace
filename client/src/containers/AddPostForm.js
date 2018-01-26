@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Input, Button } from "semantic-ui-react";
 import { Redirect } from "react-router-dom";
 
-class PostForm extends Component {
+class AddPostForm extends Component {
 
   componentWillUnmount() {
     this.props.resetPostState();
@@ -34,9 +34,7 @@ class PostForm extends Component {
 
   render () {
 
-    const { handleSubmit, pristine, submitting, postId } = this.props;
-
-    console.log(postId);
+    const { handleSubmit, pristine, submitting } = this.props;
 
     return (
       <form onSubmit={handleSubmit(this.formSubmit)}>
@@ -105,4 +103,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default reduxForm({ form: "post" })(connect(mapStateToProps, actions)(PostForm));
+export default reduxForm({ form: "post" })(connect(mapStateToProps, actions)(AddPostForm));

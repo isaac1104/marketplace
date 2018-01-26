@@ -20,7 +20,7 @@ class PostContent extends Component {
           <div className="row justify-content-between">
             <button className="btn btn-outline-info rounded-circle" onClick={() => { window.history.back() }}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
             <div>
-              <Link className="btn btn-outline-success mr-4" to={"/postform/"+data.id}>Edit Post</Link>
+              <Link className="btn btn-outline-success mr-4" to={"/edit-post/"+data.id}>Edit Post</Link>
               <button className="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#delete-confirmation">Delete Post</button>
               <div className="modal fade" id="delete-confirmation" tabIndex="-1" role="dialog">
                 <div className="modal-dialog" role="document">

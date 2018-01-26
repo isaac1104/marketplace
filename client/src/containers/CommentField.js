@@ -6,21 +6,30 @@ import { Link } from "react-router-dom";
 
 class CommentField extends Component {
 
+  state={
+    comment: ""
+  }
+
+  onSubmit = () => {
+    this.props.addNewComment(this.props.user.data[0].username, this.props.postId, this.state.comment);
+    this.setState({comment:""});
+  }
+
   renderCommentField = () => {
     if (this.props.user.data) {
       return (
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-3 text-center">
             <img src="http://via.placeholder.com/300x300" alt="" className="img-fluid"/>
-            <h5 className="mt-0">Username</h5>
+            <h5 className="mt-0">{this.props.user.data[0].username}</h5>
           </div>
           <div className="col-9">
             <form>
               <div className="form-group">
-                <label>Comment</label>
-                <textarea className="form-control" style={{resize: "none", height: "100px"}}></textarea>
+                <label>Leave a Comment</label>
+                <textarea className="form-control" style={{resize: "none", height: "100px"}} value={this.state.comment} onChange={e=>this.setState({comment:e.target.value})}/>
               </div>
-              <button type="submit" className="btn btn-primary pull-right">Submit</button>
+              <button type="button" className="btn btn-primary pull-right" onClick={this.onSubmit} disabled={!this.state.comment}>Submit</button>
             </form>
           </div>
         </div>
@@ -53,7 +62,8 @@ class CommentField extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.logInUser
+    user: state.logInUser,
+    addComment: state.addComment
   }
 }
 

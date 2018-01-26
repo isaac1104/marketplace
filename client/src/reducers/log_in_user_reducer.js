@@ -1,8 +1,8 @@
 import { LOG_IN_USER, LOG_IN_ERROR, RESET_LOGIN_STATE } from "./../actions/types";
 
 const initialState = {
-  data: null,
-  loggedIn: null
+  data: "",
+  loggedIn: ""
 }
 
 function logInUserReducer(state = initialState, action) {
@@ -16,13 +16,13 @@ function logInUserReducer(state = initialState, action) {
     case LOG_IN_ERROR:
       return {
         ...state,
-        data: null,
+        data: "",
         loggedIn: action.payload
       };
     case RESET_LOGIN_STATE:
       return {
         ...state,
-        data: null,
+        data: "",
         loggedIn: action.payload
       }
     default:

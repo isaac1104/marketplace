@@ -9,6 +9,7 @@ class LogInForm extends Component {
 
   componentDidMount() {
     this.props.resetLogIn();
+    console.log(this.props.user);
   }
 
   formSubmit = () => {

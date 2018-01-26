@@ -49,6 +49,7 @@ class PostContent extends Component {
     if (this.props.postData.post) {
       const data = this.props.postData.post[0];
       const date = new Date(data.timestamp+' UTC');
+      const modified = new Date(data.modified+ ' UTC');
       return (
         <div>
           <div className="row justify-content-between">
@@ -58,7 +59,10 @@ class PostContent extends Component {
 
           </div>
           <h1>{data.title}</h1>
-          <h4>{data.author}<span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {date.toLocaleString()}</span></h4>
+          <h4>By {data.author}</h4>
+          <h4>Posted On: <span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {date.toLocaleString()}</span></h4>
+          <h4>Last Modified: <span className="badge badge-pill badge-info ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {modified.toLocaleString()}</span></h4>
+
           <hr/>
           <img className="card-img img-fluid" src="http://via.placeholder.com/300x300" alt=""/>
           <hr/>

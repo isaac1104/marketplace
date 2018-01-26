@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 class UserInfo extends Component {
   render() {
-    if (this.props.currentUser.loggedIn) {
+    if (this.props.currentUser.loggedIn && this.props.currentUser.data) {
       return (
         <div className="row">
           <div className="col-4 text-center">

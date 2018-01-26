@@ -17,7 +17,7 @@ class PostContent extends Component {
   renderDetail = () => {
     if (this.props.postData) {
       const data = this.props.postData[0];
-      let date = new Date(data.timestamp+' UTC');
+      const date = new Date(data.timestamp+' UTC');
       return (
         <div>
           <div className="row justify-content-between">

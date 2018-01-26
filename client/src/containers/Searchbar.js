@@ -4,13 +4,16 @@ import { Button } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import * as actions from './../actions';
 import { connect } from 'react-redux';
-
+import { Redirect } from "react-router-dom";
 
 class Search extends Component {
 
   formSubmit = ({ search }) => {
     // this.props.searchPost(search);
-    window.location.href="/search/"+search;
+    if (this.props.query) {
+      return <Redirect to={`/search/${search}`}/>;
+    }
+    // window.location.href=`/search/${search}`;
   }
 
   render() {
@@ -41,4 +44,10 @@ class Search extends Component {
   }
 }
 
-export default reduxForm({ form: "search" })(connect(null, actions)(Search));
+function mapStateToProps(state) {
+  return {
+    postData: state.postData
+  }
+}
+
+export default reduxForm({ form: "search" })(connect(mapStateToProps, actions)(Search));

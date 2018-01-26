@@ -11,23 +11,17 @@ class PostContent extends Component {
     this.props.fetchSinglePostData(this.props.postId);
   }
 
-  goBack = () => {
-    window.history.back();
-  }
-
   renderDetail = () => {
-    if (this.props.postData) {
-      const data = this.props.postData[0];
-      let date = new Date(data.timestamp+' UTC');
+    if (this.props.postData.post) {
+      const data = this.props.postData.post[0];
+      const date = new Date(data.timestamp+' UTC');
       return (
         <div>
           <div className="row justify-content-between">
-            <button className="btn btn-outline-info rounded-circle" onClick={() => {this.goBack()}}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-
+            <button className="btn btn-outline-info rounded-circle" onClick={() => { window.history.back() }}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
             <div>
               <Link className="btn btn-outline-success mr-4" to={"/postform/"+data.id}>Edit Post</Link>
               <button className="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#delete-confirmation">Delete Post</button>
-
               <div className="modal fade" id="delete-confirmation" tabIndex="-1" role="dialog">
                 <div className="modal-dialog" role="document">
                   <div className="modal-content">
@@ -49,7 +43,6 @@ class PostContent extends Component {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
           <h1>{data.title}</h1>

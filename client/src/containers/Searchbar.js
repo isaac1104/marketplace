@@ -6,7 +6,6 @@ import * as actions from './../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-
 class Search extends Component {
   state={
     search: ""
@@ -34,10 +33,10 @@ class Search extends Component {
     } else {
       return (
       <Link to={"/search/"+this.state.search} className="d-block">
-       <Button
-         color="teal"
-         size="mini"
-         type="submit"
+        <Button
+          color="teal"
+          size="mini"
+          type="submit"
          className="h-100"
          >
          <Button.Content>SEARCH</Button.Content>
@@ -70,4 +69,10 @@ class Search extends Component {
   }
 }
 
-export default reduxForm({ form: "search" })(connect(null, actions)(Search));
+function mapStateToProps(state) {
+  return {
+    postData: state.postData
+  }
+}
+
+export default reduxForm({ form: "search" })(connect(mapStateToProps, actions)(Search));

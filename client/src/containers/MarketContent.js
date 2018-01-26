@@ -51,7 +51,7 @@ class MarketContent extends Component {
     return (
       <div>
         <h1 className="d-inline-block">Market</h1>
-        <Link to="/postform" className="btn btn-success d-inline-block pull-right">Write a Post</Link>
+        <Link to="/add-post" className="btn btn-success d-inline-block pull-right">Write a Post</Link>
         <hr className="my-3"/>
         <Filter />
         <div className="row align-items-center">

@@ -34,7 +34,9 @@ class PostForm extends Component {
 
   render () {
 
-    const { handleSubmit, pristine, submitting } = this.props;
+    const { handleSubmit, pristine, submitting, postId } = this.props;
+
+    console.log(postId);
 
     return (
       <form onSubmit={handleSubmit(this.formSubmit)}>

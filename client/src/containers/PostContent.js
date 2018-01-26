@@ -3,6 +3,7 @@ import Comment from "./../components/Comment";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
 import { Loader } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 class PostContent extends Component {
 
@@ -19,7 +20,7 @@ class PostContent extends Component {
           <div className="row justify-content-between">
             <button className="btn btn-outline-info rounded-circle" onClick={() => { window.history.back() }}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
             <div>
-              <button className="btn btn-outline-success mr-4" type="button">Edit Post</button>
+              <Link className="btn btn-outline-success mr-4" to={"/postform/"+data.id}>Edit Post</Link>
               <button className="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#delete-confirmation">Delete Post</button>
               <div className="modal fade" id="delete-confirmation" tabIndex="-1" role="dialog">
                 <div className="modal-dialog" role="document">
@@ -47,12 +48,29 @@ class PostContent extends Component {
           <h1>{data.title}</h1>
           <h4>{data.author}<span className="badge badge-pill badge-secondary ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {date.toLocaleString()}</span></h4>
           <hr/>
-          <img className="card-img img-fluid" src="http://via.placeholder.com/350x200" alt=""/>
+          <img className="card-img img-fluid" src="http://via.placeholder.com/300x300" alt=""/>
           <hr/>
           <div className="card-body">
-            <p className="card-text" style={{whiteSpace:"pre"}}>{data.description}</p>
-            <p className="card-text">{data.location}</p>
-            <p className="card-text">$ {data.price}</p>
+            <div className="list-group">
+              <div className="list-group-item bg-light">
+                <h3>Description</h3>
+              </div>
+              <div className="list-group-item">
+                <p className="card-text" style={{whiteSpace:"pre"}}>{data.description}</p>
+              </div>
+            </div>
+            <table className="table table-bordered my-4">
+              <tbody>
+                <tr>
+                  <td className="w-25 bg-light"><strong>Location</strong></td>
+                  <td><p className="card-text">{data.location}</p></td>
+                </tr>
+                <tr>
+                  <td className="w-25 bg-light"><strong>Price</strong></td>
+                  <td><p className="card-text">$ {data.price}</p></td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <Comment/>
         </div>

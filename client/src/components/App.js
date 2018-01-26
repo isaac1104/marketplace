@@ -5,7 +5,7 @@ import SignUp from "./../pages/SignUp";
 import About from "./../pages/About";
 import Market from "./../pages/Market";
 import Post from "./../pages/Post";
-import AddPost from "./../pages/AddPost";
+import PostForm from "./../pages/PostForm";
 import MyProfile from "./../pages/MyProfile";
 import MyPost from "./../pages/MyPost";
 import MyComment from "./../pages/MyComment";
@@ -23,7 +23,7 @@ const App = () => {
           <Route exact path="/about" component={About}/>
           <Route exact path="/market" component={Market}/>
           <Route exact path="/post/:postId" component={Post}/>
-          <Route exact path="/add-post" component={AddPost}/>
+          <Route exact path="/postform/:postId?" component={PostForm}/>
           <Route exact path="/my-profile" component={MyProfile}/>
           <Route exact path="/my-posts" component={MyPost} />
           <Route exact path="/my-comments" component={MyComment} />

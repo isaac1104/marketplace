@@ -27,7 +27,7 @@ export default class MyPostContent extends Component {
                   <td>1/22/2018 4:30 PM</td>
                   <td><Link to="/post/1">Stolen iPhone X</Link></td>
                   <td>$ 500.00</td>
-                  <td><Link to="#">Edit</Link></td>
+                  <td><Link to="/postform/1">Edit</Link></td>
                   <td><Link to="#">Delete</Link></td>
                 </tr>
                 <tr>
@@ -35,7 +35,7 @@ export default class MyPostContent extends Component {
                   <td>1/22/2018 4:30 PM</td>
                   <td><Link to="/post/1">Stolen iPhone X</Link></td>
                   <td>$ 500.00</td>
-                  <td><Link to="#">Edit</Link></td>
+                  <td><Link to="/postform/2">Edit</Link></td>
                   <td><Link to="#">Delete</Link></td>
                 </tr>
               </tbody>

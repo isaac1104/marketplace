@@ -47,7 +47,7 @@ class HomeContent extends Component {
         </div>
         <h1>Recently Uploaded</h1>
         <hr className="my-2"/>
-        <div className="row">
+        <div className="row align-items-center">
           {this.renderPosting()}
         </div>
       </div>

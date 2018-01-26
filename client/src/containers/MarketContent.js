@@ -54,7 +54,7 @@ class MarketContent extends Component {
         <Link to="/postform" className="btn btn-success d-inline-block pull-right">Write a Post</Link>
         <hr className="my-3"/>
         <Filter />
-        <div className="row">
+        <div className="row align-items-center">
           {this.renderPosting()}
         </div>
       </div>

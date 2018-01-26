@@ -17,7 +17,6 @@ export default class MyCommentContent extends Component {
                   <th>Post</th>
                   <th>Timestamp</th>
                   <th>Comment</th>
-                  <th>Edit</th>
                   <th>Delete</th>
                 </tr>
               </thead>
@@ -26,14 +25,12 @@ export default class MyCommentContent extends Component {
                   <td><Link to="/post/1">Stolen iPhone X</Link></td>
                   <td>1/23/2018 4:30 PM</td>
                   <td>This is a comment</td>
-                  <td><Link to="#">Edit</Link></td>
                   <td><Link to="#">Delete</Link></td>
                 </tr>
                 <tr>
                   <td><Link to="/post/1">Stolen iPhone X</Link></td>
                   <td>1/23/2018 4:30 PM</td>
                   <td>This is a comment</td>
-                  <td><Link to="#">Edit</Link></td>
                   <td><Link to="#">Delete</Link></td>
                 </tr>
               </tbody>

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
-import { Input, Button } from "semantic-ui-react";
-import { Redirect, Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 
 class EditPostForm extends Component {
   state={
@@ -46,8 +44,6 @@ class EditPostForm extends Component {
   // }
 
   render () {
-
-    const { handleSubmit, pristine, submitting, postData } = this.props;
 
     return (
       <form>

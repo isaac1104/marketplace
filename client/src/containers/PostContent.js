@@ -88,7 +88,7 @@ class PostContent extends Component {
               </tbody>
             </table>
           </div>
-          <Comment/>
+          <Comment postId={this.props.postId}/>
         </div>
       );
     } else {

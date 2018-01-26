@@ -5,6 +5,7 @@ import logInUserReducer from "./log_in_user_reducer";
 import postDataReducer from "./fetch_posting_data_reducer";
 import addNewPostReducer from "./add_new_post_reducer";
 import editPostReducer from "./edit_post_reducer";
+import commentDataReducer from "./fetch_comment_data_reducer";
 
 const rootReducer = combineReducers({
   postData: postDataReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   logInUser: logInUserReducer,
   newPost: addNewPostReducer,
   editPost: editPostReducer,
+  commentData: commentDataReducer,
   form: formReducer
 });
 

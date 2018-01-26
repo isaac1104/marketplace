@@ -1,15 +1,29 @@
 import React, { Component } from 'react';
 import CommentItem from "./../components/CommentItem";
 
+
 export default class CommentList extends Component {
+
   render() {
-    return (
-      // Loop through data and display each in CommentItem component
-      <CommentItem
-        username="username"
-        timestamp="1/23/2018 4:00 PM"
-        comment="This is a test comment"
-      />
-    );
+
+    const { data } = this.props.commentData;
+    // console.log(data);
+    if (data.length>=1) {
+      return data.map(comment => {
+        let date = new Date(comment.timestamp+' UTC');
+        return (
+          <CommentItem
+            username={comment.username}
+            timestamp={date.toLocaleString()}
+            comment={comment.comment}
+            key={comment.id}
+          />
+        );
+      })
+    } else {
+      return(
+        <div>Be the first one to leave a comment!</div>
+      )
+    }
   }
 }

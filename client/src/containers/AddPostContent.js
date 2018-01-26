@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 class AddPostContent extends Component {
 
   renderPostForm = () => {
-    if (this.props.user.loggedIn) {
+    if (this.props.user.data) {
       return (
         <div className="container">
           <h1 className="display-4">New Post</h1>

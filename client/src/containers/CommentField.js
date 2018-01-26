@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 class CommentField extends Component {
 
   renderCommentField = () => {
-    if (this.props.user.loggedIn) {
+    if (this.props.user.data) {
       return (
         <div className="row">
           <div className="col-3 text-center">

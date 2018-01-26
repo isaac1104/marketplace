@@ -10,6 +10,10 @@ class SearchContent extends Component {
     this.props.searchPost(this.props.query);
   }
 
+  componentDidUpdate() {
+    this.props.searchPost(this.props.query);
+  }
+
   renderPosting = () => {
     if (this.props.postData) {
       return this.props.postData.map(post => {
@@ -47,7 +51,7 @@ class SearchContent extends Component {
 
   renderNumOfResult = () => {
     if (this.props.postData) {
-      const num_results = this.props.postData.length;
+      let num_results = this.props.postData.length;
       if (num_results === 1) {
         return (
           <p className="text-muted">There is <span className="text-info">1</span> result.</p>
@@ -61,7 +65,7 @@ class SearchContent extends Component {
   }
 
   render () {
-    console.log(this.props.postData);
+
     return (
       <div>
         <h1 className="d-inline-block">Search Result for: {this.props.query}</h1>
@@ -76,9 +80,9 @@ class SearchContent extends Component {
   }
 
   function mapStateToProps(state) {
-    return {
-      postData: state.postData,
-    }
+  return {
+    postData: state.postData,
+  }
   }
 
   export default connect(mapStateToProps, actions)(SearchContent);

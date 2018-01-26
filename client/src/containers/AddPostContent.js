@@ -1,22 +1,20 @@
 import React, { Component } from "react";
-import PostForm from "./PostForm";
+import AddPostForm from "./AddPostForm";
 import { Dimmer, Header } from "semantic-ui-react";
 import { connect } from "react-redux";
 import * as actions from "./../actions";
 import { Link } from "react-router-dom";
 
-class PostFormContent extends Component {
+class AddPostContent extends Component {
 
   renderPostForm = () => {
     if (this.props.user.loggedIn) {
       return (
         <div className="container">
-          <h1 className="display-4">{this.props.postId? "Edit Post":"New Post"}</h1>
+          <h1 className="display-4">New Post</h1>
           <p className="lead">Some post policy/regulations can go here.</p>
           <hr className="my-2" />
-          <PostForm
-            postId={this.props.postId? this.props.postId: null}
-          />
+          <AddPostForm />
         </div>
       );
     } else {
@@ -51,4 +49,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(PostFormContent);
+export default connect(mapStateToProps, actions)(AddPostContent);

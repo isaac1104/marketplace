@@ -11,8 +11,8 @@ class HomeContent extends Component {
   }
 
   renderPosting = () => {
-    if (this.props.postData) {
-      return this.props.postData.slice(0,6).map(post => {
+    if (this.props.postData.data) {
+      return this.props.postData.data.slice(0,6).map(post => {
         return (
           <PostItem
             id={post.id}
@@ -37,7 +37,6 @@ class HomeContent extends Component {
   }
 
   render () {
-
     return (
       <div>
         <div className="jumbotron">
@@ -58,7 +57,8 @@ class HomeContent extends Component {
 
 function mapStateToProps(state) {
   return {
-    postData: state.postData
+    postData: state.postData,
+    user: state.logInUser.loggedIn
   }
 }
 

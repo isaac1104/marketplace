@@ -13,8 +13,8 @@ class MarketContent extends Component {
   }
 
   renderPosting = () => {
-    if (this.props.postData) {
-      return this.props.postData.map(post => {
+    if (this.props.postData.data) {
+      return this.props.postData.data.map(post => {
         return (
           <PostItem
             id={post.id}
@@ -26,7 +26,7 @@ class MarketContent extends Component {
           />
         );
       });
-    } else if (this.props.postData === "") {
+    } else if (this.props.postData.data === "") {
       return (
         <div className="jumbotron jumbotron-fluid w-100">
           <div className="container">

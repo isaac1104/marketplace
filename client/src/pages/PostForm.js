@@ -1,9 +1,9 @@
 import React from "react";
 import Sidebar from "./../components/Sidebar";
 import Navbar from "./../components/Navbar";
-import AddPostContent from "./../containers/AddPostContent";
+import PostFormContent from "./../containers/PostFormContent";
 
-const AddPost = () => {
+const PostForm = (props) => {
   return (
     <div>
       <Navbar/>
@@ -13,7 +13,7 @@ const AddPost = () => {
             <Sidebar/>
           </div>
           <div className="col-md-8 col-12 pt-2">
-            <AddPostContent/>
+            <PostFormContent postId={props.match.params.postId}/>
           </div>
         </div>
       </div>
@@ -21,4 +21,4 @@ const AddPost = () => {
   );
 }
 
-export default AddPost;
+export default PostForm;

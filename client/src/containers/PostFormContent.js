@@ -5,16 +5,18 @@ import { connect } from "react-redux";
 import * as actions from "./../actions";
 import { Link } from "react-router-dom";
 
-class PostContent extends Component {
+class PostFormContent extends Component {
 
   renderPostForm = () => {
     if (this.props.user.loggedIn) {
       return (
         <div className="container">
-          <h1 className="display-4">New Post</h1>
+          <h1 className="display-4">{this.props.postId? "Edit Post":"New Post"}</h1>
           <p className="lead">Some post policy/regulations can go here.</p>
           <hr className="my-2" />
-          <PostForm />
+          <PostForm
+            postId={this.props.postId? this.props.postId: null}
+          />
         </div>
       );
     } else {
@@ -49,4 +51,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, actions)(PostContent);
+export default connect(mapStateToProps, actions)(PostFormContent);

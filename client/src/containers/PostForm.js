@@ -7,6 +7,14 @@ import { Redirect } from "react-router-dom";
 
 class PostForm extends Component {
 
+  componentWillMount() {
+    if (this.props.postId) {
+      this.props.fetchSinglePostData(this.props.postId);
+    } else {
+      this.props.postData.post=null;
+    }
+  }
+
   componentWillUnmount() {
     this.props.resetPostState();
   }
@@ -34,9 +42,13 @@ class PostForm extends Component {
 
   render () {
 
-    const { handleSubmit, pristine, submitting, postId } = this.props;
+    const { handleSubmit, pristine, submitting, postData } = this.props;
 
-    console.log(postId);
+    if (postData.post) {
+      const data = postData.post[0];
+      console.log(data);
+    }
+
 
     return (
       <form onSubmit={handleSubmit(this.formSubmit)}>
@@ -101,7 +113,8 @@ function mapStateToProps(state) {
   return {
     form: state.form,
     newPost: state.newPost,
-    user: state.logInUser
+    user: state.logInUser,
+    postData: state.postData
   };
 }
 

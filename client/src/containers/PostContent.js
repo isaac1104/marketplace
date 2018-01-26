@@ -12,7 +12,7 @@ class PostContent extends Component {
   }
 
   renderEditDelete = () => {
-    if (this.props.postData.post) {
+    if (this.props.postData.post && this.props.user.loggedIn) {
       if (this.props.postData.post[0].author === this.props.user.data[0].username) {
         return (
           <div>

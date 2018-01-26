@@ -15,8 +15,8 @@ class SearchContent extends Component {
   }
 
   renderPosting = () => {
-    if (this.props.postData) {
-      return this.props.postData.map(post => {
+    if (this.props.postData.data) {
+      return this.props.postData.data.map(post => {
         return (
           <PostItem
             id={post.id}
@@ -28,7 +28,7 @@ class SearchContent extends Component {
           />
         );
       });
-    } else if (this.props.postData === "") {
+    } else if (this.props.postData.data === "") {
       return (
         <div className="jumbotron jumbotron-fluid w-100">
           <div className="container">
@@ -50,8 +50,8 @@ class SearchContent extends Component {
   }
 
   renderNumOfResult = () => {
-    if (this.props.postData) {
-      let num_results = this.props.postData.length;
+    if (this.props.postData.data) {
+      let num_results = this.props.postData.data.length;
       if (num_results === 1) {
         return (
           <p className="text-muted">There is <span className="text-info">1</span> result.</p>

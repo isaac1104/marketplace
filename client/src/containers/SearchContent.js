@@ -10,6 +10,10 @@ class SearchContent extends Component {
     this.props.searchPost(this.props.query);
   }
 
+  componentDidUpdate() {
+    this.props.searchPost(this.props.query);
+  }
+
   renderPosting = () => {
     if (this.props.postData) {
       return this.props.postData.map(post => {

@@ -4,17 +4,51 @@ import { Button } from "semantic-ui-react";
 import { Field, reduxForm } from "redux-form";
 import * as actions from './../actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 class Search extends Component {
+  state={
+    search: ""
+  }
+
 
   formSubmit = ({ search }) => {
-    // this.props.searchPost(search);
-    window.location.href="/search/"+search;
+    this.setState({
+      search: search
+    });
+  }
+
+  renderSearchBtn = () => {
+    if (this.state.search === "") {
+      return (
+        <Button
+          color="teal"
+          size="mini"
+          type="submit"
+          disabled
+          >
+          <Button.Content>SEARCH</Button.Content>
+        </Button>
+      );
+    } else {
+      return (
+      <Link to={"/search/"+this.state.search} className="d-block">
+       <Button
+         color="teal"
+         size="mini"
+         type="submit"
+         className="h-100"
+         >
+         <Button.Content>SEARCH</Button.Content>
+       </Button>
+       </Link>
+      );
+    }
   }
 
   render() {
-    const { handleSubmit, pristine, submitting } = this.props;
+    const { handleSubmit } = this.props;
     const style = {
       display: "flex",
       justifyContent: "center"
@@ -27,14 +61,9 @@ class Search extends Component {
             name="search"
             component={SearchField}
             onFocus={(e)=>{e.target.select()}}
+            onChange={(e)=>{this.setState({search: e.target.value})}}
           />
-          <Button
-            color="teal"
-            size="mini"
-            type="submit"
-            disabled={pristine || submitting}>
-            <Button.Content>SEARCH</Button.Content>
-          </Button>
+         {this.renderSearchBtn()}
         </form>
       </div>
     )

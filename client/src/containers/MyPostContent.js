@@ -5,10 +5,6 @@ import MyPostTable from "./../components/MyPostTable";
 
 class MyPostContent extends Component {
 
-  state={
-    myPosts: []
-  }
-
   componentDidMount() {
     this.props.fetchPostData();
   }

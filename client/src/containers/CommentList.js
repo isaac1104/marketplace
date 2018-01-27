@@ -4,10 +4,6 @@ import CommentItem from "./../components/CommentItem";
 
 export default class CommentList extends Component {
 
-  componentDidMount() {
-    console.log(this.props.user);
-  }
-
   renderCommentItem = () => {
     const { data } = this.props.commentData;
     if (data.length>=1) {

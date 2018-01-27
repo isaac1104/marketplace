@@ -1,7 +1,26 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import * as actions from "./../actions";
+import { connect } from "react-redux";
+import MyPostTable from "./../components/MyPostTable";
 
-export default class MyPostContent extends Component {
+class MyPostContent extends Component {
+
+  state={
+    myPosts: []
+  }
+
+  componentDidMount() {
+    this.props.fetchPostData();
+  }
+
+  renderPostTable = (username) => {
+    const myPosts = this.props.postData.data.filter((post)=>{return post.author === username;});
+    return myPosts.map(post=>{
+      return (
+        <MyPostTable post={post} key={post.id}/>
+      )
+    });
+  }
 
   render () {
     return (
@@ -22,27 +41,44 @@ export default class MyPostContent extends Component {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Electronics</td>
-                  <td>1/22/2018 4:30 PM</td>
-                  <td><Link to="/post/1">Stolen iPhone X</Link></td>
-                  <td>$ 500.00</td>
-                  <td><Link to="/postform/1">Edit</Link></td>
-                  <td><Link to="#">Delete</Link></td>
-                </tr>
-                <tr>
-                  <td>Electronics</td>
-                  <td>1/22/2018 4:30 PM</td>
-                  <td><Link to="/post/1">Stolen iPhone X</Link></td>
-                  <td>$ 500.00</td>
-                  <td><Link to="/postform/2">Edit</Link></td>
-                  <td><Link to="#">Delete</Link></td>
-                </tr>
+                {this.renderPostTable(this.props.user.data[0].username)}
               </tbody>
             </table>
           </div>
         </div>
+
+        <div className="modal fade" id="delete-confirmation" tabIndex="-1" role="dialog">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title text-danger"><i className="fa fa-exclamation-triangle" aria-hidden="true"></i> Delete Post</h5>
+                <button type="button" className="close" data-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div className="modal-body text-center">
+                <h3>Are You Sure?</h3>
+                <p>This will delete all comments belong to this post as well.</p>
+                <p className="text-danger">This action is irreversible.</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" className="btn btn-danger">Delete Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    user: state.logInUser,
+    postData: state.postData
+  }
+}
+
+export default connect(mapStateToProps, actions)(MyPostContent);

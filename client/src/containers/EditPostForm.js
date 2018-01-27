@@ -12,6 +12,20 @@ class EditPostForm extends Component {
     description: this.props.postData.description
   }
 
+  componentDidMount() {
+    console.log(this.props.postData);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.postData.title,
+      category: nextProps.postData.category,
+      location: nextProps.postData.location,
+      price: nextProps.postData.price,
+      description: nextProps.postData.description
+    })
+  }
+
   componentWillUnmount() {
     this.props.resetPostState();
   }
@@ -44,6 +58,7 @@ class EditPostForm extends Component {
   // }
 
   render () {
+    // console.log(this.props.postData);
 
     return (
       <form>

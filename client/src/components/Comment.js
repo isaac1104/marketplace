@@ -10,8 +10,8 @@ class Comment extends Component {
     this.props.fetchCommentData(this.props.postId);
   }
 
-  componentDidUpdate() {
-    this.props.fetchCommentData(this.props.postId);
+  componentWillReceiveProps(nextProps) {
+    this.props.fetchCommentData(nextProps.postId);
   }
 
   render() {
@@ -20,7 +20,7 @@ class Comment extends Component {
         <div className="container">
           <CommentField postId={this.props.postId}/>
           <hr className="my-2"/>
-          <CommentList commentData={this.props.commentData}/>
+          <CommentList commentData={this.props.commentData} user={this.props.user.data? this.props.user.data[0].username:""}/>
         </div>
       </div>
     );
@@ -30,7 +30,8 @@ class Comment extends Component {
 
 function mapStateToProps(state) {
   return {
-    commentData: state.commentData
+    commentData: state.commentData,
+    user: state.logInUser
   }
 }
 

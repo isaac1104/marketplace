@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
-import { Input, Button } from "semantic-ui-react";
-import { Redirect, Link } from "react-router-dom";
+import { Button } from "semantic-ui-react";
 
 class EditPostForm extends Component {
   state={
@@ -12,6 +10,20 @@ class EditPostForm extends Component {
     location: this.props.postData.location,
     price: this.props.postData.price,
     description: this.props.postData.description
+  }
+
+  componentDidMount() {
+    console.log(this.props.postData);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      title: nextProps.postData.title,
+      category: nextProps.postData.category,
+      location: nextProps.postData.location,
+      price: nextProps.postData.price,
+      description: nextProps.postData.description
+    })
   }
 
   componentWillUnmount() {
@@ -46,8 +58,7 @@ class EditPostForm extends Component {
   // }
 
   render () {
-
-    const { handleSubmit, pristine, submitting, postData } = this.props;
+    // console.log(this.props.postData);
 
     return (
       <form>

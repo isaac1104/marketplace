@@ -11,6 +11,11 @@ class PostContent extends Component {
     this.props.fetchSinglePostData(this.props.postId);
   }
 
+  deletePost = (postId) => {
+    console.log(postId);
+  }
+
+
   renderEditDelete = () => {
     if (this.props.postData.post && this.props.user.data) {
       if (this.props.postData.post[0].author === this.props.user.data[0].username) {
@@ -34,7 +39,7 @@ class PostContent extends Component {
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" className="btn btn-danger">Delete Post</button>
+                    <button type="button" className="btn btn-danger" onClick={()=>this.deletePost(this.props.postId)}>Delete Post</button>
                   </div>
                 </div>
               </div>
@@ -88,7 +93,7 @@ class PostContent extends Component {
               </tbody>
             </table>
           </div>
-          <Comment/>
+          <Comment postId={this.props.postId}/>
         </div>
       );
     } else {

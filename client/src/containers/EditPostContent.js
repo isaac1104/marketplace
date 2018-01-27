@@ -13,7 +13,6 @@ class EditPostContent extends Component {
 
 
 
-
   renderPostForm = () => {
     if (this.props.postData.post) {
       if (this.props.user.loggedIn && this.props.user.data[0].username === this.props.postData.post[0].author) {

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE, FILTER_POST, SEARCH_POST, EDIT_POST, FETCH_COMMENT_DATA, ADD_NEW_COMMENT } from "./types";
+import { POST_NEW_USER, RESET_USER_STATE, LOG_IN_USER, FETCH_POST_DATA, FETCH_SINGLE_POST_DATA, LOG_IN_ERROR, RESET_LOGIN_STATE, ADD_NEW_POST, RESET_POST_STATE, FILTER_POST, SEARCH_POST, EDIT_POST, FETCH_COMMENT_DATA, ADD_NEW_COMMENT, DELETE_COMMENT } from "./types";
 
 export const fetchPostData = () => async dispatch => {
   const request = await axios.get("https://54.215.120.93/api/posts/postdata.php");
@@ -112,4 +112,12 @@ export const addNewComment = (username, post_id, comment) => async dispatch => {
   });
   const { data } = request;
   dispatch({ type: ADD_NEW_COMMENT, payload: data });
+}
+
+export const deleteComment = id => async dispatch => {
+  const request = await axios.post("https://54.215.120.93/api/comments/delete.php", {
+    id
+  });
+  const { data } = request;
+  dispatch({ type: DELETE_COMMENT, payload: data });
 }

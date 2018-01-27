@@ -10,17 +10,14 @@ class Comment extends Component {
     this.props.fetchCommentData(this.props.postId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.props.fetchCommentData(nextProps.postId);
-  }
 
   render() {
     return (
       <div className="jumbotron jumbotron-fluid py-2 my-2">
         <div className="container">
-          <CommentField postId={this.props.postId}/>
+          <CommentField postId={this.props.postId} refetchCommentData={()=>{this.props.fetchCommentData(this.props.postId)}}/>
           <hr className="my-2"/>
-          <CommentList commentData={this.props.commentData} user={this.props.user.data? this.props.user.data[0].username:""}/>
+          <CommentList commentData={this.props.commentData} user={this.props.user.data? this.props.user.data[0].username:""} refetchCommentData={()=>{this.props.fetchCommentData(this.props.postId)}}/>
         </div>
       </div>
     );

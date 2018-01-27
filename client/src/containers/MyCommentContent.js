@@ -12,15 +12,16 @@ class MyCommentContent extends Component {
 
   renderCommentTable = (username) => {
 
-    // console.log(myPosts);
-    const myComments = this.props.commentData.data.filter((comment)=>{return comment.username === username;});
+    if (this.props.commentData.data.length >=1) {
+      const myComments = this.props.commentData.data.filter((comment)=>{return comment.username === username;});
 
-    return myComments.map(comment=>{
-      let commentedPost = this.props.postData.data.filter((post)=>{return post.id === comment.post_id;});
-      return (
-        <MyCommentTable comment={comment} post={commentedPost} key={comment.id}/>
-      )
-    });
+      return myComments.map(comment=>{
+        let commentedPost = this.props.postData.data.filter((post)=>{return post.id === comment.post_id;});
+        return (
+          <MyCommentTable comment={comment} post={commentedPost} key={comment.id}/>
+        )
+      });
+    }
   }
 
   deleteComment = (commentId) => {

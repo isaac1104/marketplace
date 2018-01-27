@@ -77,7 +77,7 @@ class PostContent extends Component {
                 <h3>Description</h3>
               </div>
               <div className="list-group-item">
-                <p className="card-text" style={{whiteSpace:"pre"}}>{data.description}</p>
+                <p className="card-text" style={{whiteSpace:"pre-wrap"}}>{data.description}</p>
               </div>
             </div>
             <table className="table table-bordered my-4">

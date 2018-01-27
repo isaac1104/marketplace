@@ -18,7 +18,7 @@ const CommentItem = (props) => {
               </div>
             </div>
             <p><span className="badge badge-secondary">{props.timestamp}</span></p>
-            <p>{props.comment}</p>
+            <p style={{whiteSpace:"pre"}}>{props.comment}</p>
           </div>
         </div>
       </div>

@@ -22,6 +22,10 @@ class MyPostContent extends Component {
     });
   }
 
+  deletePost = (postId) => {
+    console.log(postId);
+  }
+
   render () {
     return (
       <div className="jumbotron jumbotron-fluid">
@@ -62,13 +66,14 @@ class MyPostContent extends Component {
                 <p className="text-danger">This action is irreversible.</p>
               </div>
               <div className="modal-footer">
+                <input type="int" id="postId" hidden/>
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-danger">Delete Post</button>
+                <button type="button" className="btn btn-danger" onClick={()=>this.deletePost(document.getElementById("postId").value)}>Delete Post</button>
               </div>
             </div>
           </div>
         </div>
-        
+
       </div>
     );
   }

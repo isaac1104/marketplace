@@ -10,10 +10,8 @@ const MyPostTable = (props) => {
         <td><Link to={"/post/"+props.post.id}>{props.post.title}</Link></td>
         <td>$ {props.post.price}</td>
         <td><Link to={"/edit-post/"+props.post.id}>Edit</Link></td>
-        <td><a href="#" data-toggle="modal" data-target="#delete-confirmation">Delete</a></td>
+        <td><a href="#" data-toggle="modal" data-target="#delete-confirmation" onClick={()=>document.getElementById("postId").value=props.post.id}>Delete</a></td>
       </tr>
-
-
   );
 }
 

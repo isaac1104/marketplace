@@ -8,7 +8,9 @@ import { Redirect } from "react-router-dom";
 class LogInForm extends Component {
 
   componentDidMount() {
-    this.props.resetLogIn();
+    if (!this.props.user.loggedIn) {
+      this.props.resetLogIn();
+    }
     console.log(this.props.user);
   }
 

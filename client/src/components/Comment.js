@@ -10,6 +10,10 @@ class Comment extends Component {
     this.props.fetchCommentData(this.props.postId);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.props.fetchCommentData(this.props.postId);
+  }
+
 
   render() {
     return (

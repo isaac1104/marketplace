@@ -9,6 +9,7 @@ class MyPostContent extends Component {
     this.props.fetchPostData();
   }
 
+
   renderPostTable = (username) => {
     const myPosts = this.props.postData.data.filter((post)=>{return post.author === username;});
     return myPosts.map(post=>{
@@ -19,7 +20,8 @@ class MyPostContent extends Component {
   }
 
   deletePost = (postId) => {
-    console.log(postId);
+    this.props.deletePost(postId);
+    window.location.reload();
   }
 
   render () {
@@ -64,7 +66,7 @@ class MyPostContent extends Component {
               <div className="modal-footer">
                 <input type="int" id="postId" hidden/>
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-danger" onClick={()=>this.deletePost(document.getElementById("postId").value)}>Delete Post</button>
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={()=>this.deletePost(document.getElementById("postId").value)}>Delete Post</button>
               </div>
             </div>
           </div>

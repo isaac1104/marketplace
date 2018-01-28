@@ -24,7 +24,10 @@ class CommentList extends Component {
       })
     } else {
       return(
-        <div>Be the first one to leave a comment!</div>
+        <div className="container text-center py-5">
+          <h3><i className="fa fa-commenting-o" aria-hidden="true"></i> There's no comment yet.</h3>
+          <p className="text-muted">Be the first one to leave a comment!</p>
+        </div>
       )
     }
   }

@@ -10,9 +10,10 @@ class MyCommentContent extends Component {
     this.props.fetchPostData();
   }
 
+
   renderCommentTable = (username) => {
 
-    if (this.props.commentData.data.length >=1) {
+    if (this.props.commentData.data) {
       const myComments = this.props.commentData.data.filter((comment)=>{return comment.username === username;});
 
       return myComments.map(comment=>{
@@ -25,7 +26,8 @@ class MyCommentContent extends Component {
   }
 
   deleteComment = (commentId) => {
-    console.log(commentId);
+    this.props.deleteComment(commentId);
+    window.location.reload();
   }
 
   render () {
@@ -68,7 +70,7 @@ class MyCommentContent extends Component {
               <div className="modal-footer">
                 <input type="int" id="commentId" hidden/>
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-danger" onClick={()=>this.deleteComment(document.getElementById("commentId").value)}>Delete Post</button>
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={()=>this.deleteComment(document.getElementById("commentId").value)}>Delete Post</button>
               </div>
             </div>
           </div>

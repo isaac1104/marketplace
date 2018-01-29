@@ -1,4 +1,4 @@
-import { FETCH_COMMENT_DATA } from "./../actions/types";
+import { FETCH_COMMENT_DATA, RESET_COMMENT_STATE } from "./../actions/types";
 
 const initialState = {
   data: [],
@@ -12,6 +12,8 @@ function commentDataReducer(state = initialState, action) {
         ...state,
         data: action.payload
       }
+    case RESET_COMMENT_STATE:
+      return action.payload;
     default:
       return state;
   }

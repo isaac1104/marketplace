@@ -12,3 +12,7 @@ export const SEARCH_POST = "SEARCH_POST";
 export const EDIT_POST = "EDIT_POST";
 export const FETCH_COMMENT_DATA = "FETCH_COMMENT_DATA";
 export const ADD_NEW_COMMENT = "ADD_NEW_COMMENT";
+export const DELETE_COMMENT = "DELETE_COMMENT";
+export const DELETE_POST = "DELETE_POST";
+export const RESET_COMMENT_STATE = "RESET_COMMENT_STATE";
+export const DELETE_USER = "DELETE_USER";

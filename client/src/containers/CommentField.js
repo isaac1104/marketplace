@@ -13,6 +13,7 @@ class CommentField extends Component {
   onSubmit = () => {
     this.props.addNewComment(this.props.user.data[0].username, this.props.postId, this.state.comment);
     this.setState({comment:""});
+    this.props.refetchCommentData();
   }
 
   renderCommentField = () => {

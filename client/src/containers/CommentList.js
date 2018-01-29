@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import * as actions from "./../actions";
+import { connect } from "react-redux";
 import CommentItem from "./../components/CommentItem";
 
 
-export default class CommentList extends Component {
+class CommentList extends Component {
 
   renderCommentItem = () => {
     const { data } = this.props.commentData;
@@ -22,13 +24,17 @@ export default class CommentList extends Component {
       })
     } else {
       return(
-        <div>Be the first one to leave a comment!</div>
+        <div className="container text-center py-5">
+          <h3><i className="fa fa-commenting-o" aria-hidden="true"></i> There's no comment yet.</h3>
+          <p className="text-muted">Be the first one to leave a comment!</p>
+        </div>
       )
     }
   }
 
   deleteComment(comment_id) {
-    console.log(comment_id);
+    this.props.deleteComment(comment_id);
+    this.props.refetchCommentData();
   }
 
   render() {
@@ -53,7 +59,7 @@ export default class CommentList extends Component {
               <div className="modal-footer">
                 <input type="int" id="commentId" hidden/>
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" className="btn btn-danger" onClick={()=>this.deleteComment(document.getElementById("commentId").value)}>Delete Comment</button>
+                <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={()=>this.deleteComment(document.getElementById("commentId").value)}>Delete Comment</button>
               </div>
             </div>
           </div>
@@ -63,3 +69,11 @@ export default class CommentList extends Component {
 
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    deleteComment: state.deleteComment
+  }
+}
+
+export default connect(mapStateToProps, actions)(CommentList);

@@ -12,7 +12,8 @@ class PostContent extends Component {
   }
 
   deletePost = (postId) => {
-    console.log(postId);
+    this.props.deletePost(postId);
+    window.history.back();
   }
 
 
@@ -39,7 +40,7 @@ class PostContent extends Component {
                   </div>
                   <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="button" className="btn btn-danger" onClick={()=>this.deletePost(this.props.postId)}>Delete Post</button>
+                    <button type="button" className="btn btn-danger" data-dismiss="modal" onClick={()=>this.deletePost(this.props.postId)}>Delete Post</button>
                   </div>
                 </div>
               </div>

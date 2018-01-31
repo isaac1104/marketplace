@@ -20,8 +20,8 @@ class CommentField extends Component {
     if (this.props.user.data) {
       return (
         <div className="row align-items-center">
-          <div className="col-3 text-center">
-            <img src="http://via.placeholder.com/300x300" alt="" className="img-fluid"/>
+          <div className="col-3 text-center align-items-center d-flex justify-content-center flex-column">
+            <img src="http://via.placeholder.com/300x300" alt="" className="img-fluid" style={{maxHeight: "150px"}}/>
             <h5 className="mt-0">{this.props.user.data[0].username}</h5>
           </div>
           <div className="col-9">

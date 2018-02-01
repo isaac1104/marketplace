@@ -8,8 +8,8 @@ class UserInfo extends Component {
     if (this.props.currentUser.loggedIn && this.props.currentUser.data) {
       return (
         <div className="row">
-          <div className="col-4 text-center">
-            <img className="my-auto img-fluid" src="http://via.placeholder.com/300x300" alt="Generic placeholder"/>
+          <div className="col-4 text-center align-items-center d-flex justify-content-center">
+            <img className="my-auto img-fluid" src="http://via.placeholder.com/150x150" alt="Generic placeholder" style={{maxHeight: "150px"}}/>
           </div>
           <div className="col-8">
             <div>

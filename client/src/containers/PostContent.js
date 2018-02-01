@@ -70,7 +70,9 @@ class PostContent extends Component {
           <h4>Last Modified: <span className="badge badge-pill badge-info ml-3"><i className="fa fa-clock-o" aria-hidden="true"></i> {modified.toLocaleString()}</span></h4>
 
           <hr/>
-          <img className="card-img img-fluid" src="http://via.placeholder.com/300x300" alt=""/>
+          <div className="card-img-top text-center d-flex align-items-center justify-content-center" style={{height: "100%", width: "100%", backgroundColor: "black"}}>
+            <img className="img-fluid" src="http://via.placeholder.com/500x500" alt="" style={{maxHeight:"500px", maxWidth: "100%"}}/>
+          </div>
           <hr/>
           <div className="card-body">
             <div className="list-group">
